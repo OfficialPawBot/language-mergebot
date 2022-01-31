@@ -1,6 +1,6 @@
 import { Comment } from "../comments";
 
-const prefix = "\n<!--typescript_bot_";
+const prefix = "\n<!--paw_bot_";
 const suffix = "-->";
 
 export function parse(body: string): Comment | undefined {

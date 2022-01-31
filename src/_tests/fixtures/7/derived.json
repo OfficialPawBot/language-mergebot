@@ -1,0 +1,74 @@
+{
+  "type": "info",
+  "now": "2022-01-31T22:46:25.235Z",
+  "pr_number": 7,
+  "author": "lesslih",
+  "headCommitOid": "fe205d320ab32c9e4c3d746cb07b615e2d6f3cca",
+  "mergeBaseOid": "main",
+  "lastPushDate": "2022-01-06T11:54:09.000Z",
+  "lastActivityDate": "2022-01-27T16:22:09.000Z",
+  "hasMergeConflict": false,
+  "isFirstContribution": false,
+  "tooManyFiles": false,
+  "hugeChange": false,
+  "popularityLevel": "Critical",
+  "pkgInfo": [
+    {
+      "name": "en",
+      "kind": "edit",
+      "files": [
+        {
+          "path": "en/commands.json",
+          "kind": "definition"
+        }
+      ],
+      "owners": [
+        "MrGriefs"
+      ],
+      "addedOwners": [],
+      "deletedOwners": [],
+      "popularityLevel": "Critical"
+    },
+    {
+      "name": "es",
+      "kind": "edit",
+      "files": [
+        {
+          "path": "es/commands.json",
+          "kind": "definition"
+        }
+      ],
+      "owners": [
+        "MrGriefs"
+      ],
+      "addedOwners": [],
+      "deletedOwners": [],
+      "popularityLevel": "Popular"
+    },
+    {
+      "name": "fr",
+      "kind": "edit",
+      "files": [
+        {
+          "path": "fr/commands.json",
+          "kind": "definition"
+        }
+      ],
+      "owners": [
+        "FurieFox"
+      ],
+      "addedOwners": [],
+      "deletedOwners": [],
+      "popularityLevel": "Well-liked by everyone"
+    }
+  ],
+  "reviews": [
+    {
+      "type": "approved",
+      "reviewer": "MrGriefs",
+      "date": "2022-01-27T16:22:09.000Z",
+      "isMaintainer": true
+    }
+  ],
+  "ciResult": "pass"
+}

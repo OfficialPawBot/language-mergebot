@@ -45,8 +45,8 @@ export async function httpTrigger(context: Context, req: HttpRequest) {
 
     if (evName === "check_run" && evAction === "completed") {
         context.log(`>>>>>> name: ${body?.check_run?.name}, sha: ${body?.check_run?.head_sha}`);
-        if (body?.check_run?.head_sha && body?.repository?.full_name === "DefinitelyTyped/DefinitelyTyped") {
-            const pr = await runQueryToGetPRMetadataForSHA1("DefinitelyTyped", "DefinitelyTyped", body?.check_run?.head_sha);
+        if (body?.check_run?.head_sha && body?.repository?.full_name === "OfficialPawBot/language") {
+            const pr = await runQueryToGetPRMetadataForSHA1("OfficialPawBot", "language", body?.check_run?.head_sha);
             if (pr) {
                 context.log(`>>>>>>>>> pr => num: ${pr.number}, title: "${pr.title}" closed: ${pr.closed}`);
             } else {
@@ -63,8 +63,8 @@ export async function httpTrigger(context: Context, req: HttpRequest) {
 const handleTrigger = (context: Context) => async (event: EmitterWebhookEvent<typeof eventNames[number]>) => {
     const fullName = event.name + "." + event.payload.action;
     context.log(`Handling event: ${fullName}`);
-    if (event.payload.sender.login === "typescript-bot" && fullName !== "check_suite.completed")
-        return reply(context, 204, "Skipped webhook because it was triggered by typescript-bot");
+    if (event.payload.sender.login === "just-a-paw-bot" && fullName !== "check_suite.completed")
+        return reply(context, 204, "Skipped webhook because it was triggered by just-a-paw-bot");
 
     // Allow the bot to run side-effects which are not the 'core' function
     // of the review cycle, but are related to keeping DT running smoothly

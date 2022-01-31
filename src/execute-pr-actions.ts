@@ -10,8 +10,8 @@ import { tagsToDeleteIfNotPosted } from "./comments";
 import * as comment from "./util/comment";
 import { request } from "https";
 
-// https://github.com/DefinitelyTyped/DefinitelyTyped/projects/5
-const ProjectBoardNumber = 5;
+// https://github.com/OfficialPawBot/language/projects/1
+const ProjectBoardNumber = 1;
 
 export async function executePrActions(actions: Actions, pr: PR_repository_pullRequest, dry?: boolean) {
     const botComments: ParsedComment[] = getBotComments(pr);
@@ -78,7 +78,7 @@ type ParsedComment = { id: string, body: string, tag: string, status: string };
 function getBotComments(pr: PR_repository_pullRequest): ParsedComment[] {
     return noNullish(
         (pr.comments.nodes ?? [])
-            .filter(comment => comment?.author?.login === "typescript-bot")
+            .filter(comment => comment?.author?.login === "just-a-paw-bot")
             .map(c => {
                 const { id, body } = c!, parsed = comment.parse(body);
                 return parsed && { id, body, ...parsed };
@@ -155,11 +155,11 @@ async function getLabelIdByName(name: string): Promise<string> {
 type RestMutation = { method: string, op: string };
 
 function doRestCall(call: RestMutation): Promise<void> {
-    const url = `https://api.github.com/repos/DefinitelyTyped/DefinitelyTyped/${call.op}`;
+    const url = `https://api.github.com/repos/OfficialPawBot/language/${call.op}`;
     const headers = {
         "accept": "application/vnd.github.v3+json",
         "authorization": `token ${process.env.BOT_AUTH_TOKEN}`,
-        "user-agent": "dt-mergebot"
+        "user-agent": "language-mergebot"
     };
     return new Promise((resolve, reject) => {
         const req = request(url, { method: call.method, headers }, reply => {

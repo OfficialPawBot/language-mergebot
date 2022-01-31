@@ -1,0 +1,298 @@
+{
+  "data": {
+    "repository": {
+      "id": "MDEwOlJlcG9zaXRvcnkzNTE2MjA4MjU=",
+      "pullRequest": {
+        "id": "PR_kwDOFPVO2c4wlQf9",
+        "title": "Fix Duplicated Template Parameter in EN Localisation",
+        "createdAt": "2022-01-05T22:03:23Z",
+        "author": {
+          "login": "lesslih",
+          "__typename": "User"
+        },
+        "authorAssociation": "CONTRIBUTOR",
+        "baseRef": {
+          "name": "main",
+          "__typename": "Ref"
+        },
+        "labels": {
+          "nodes": [
+            {
+              "name": "Definition:Bug",
+              "__typename": "Label"
+            },
+            {
+              "name": "stale",
+              "__typename": "Label"
+            }
+          ],
+          "__typename": "LabelConnection"
+        },
+        "isDraft": false,
+        "mergeable": "MERGEABLE",
+        "number": 7,
+        "state": "OPEN",
+        "headRefOid": "fe205d320ab32c9e4c3d746cb07b615e2d6f3cca",
+        "changedFiles": 3,
+        "additions": 6,
+        "deletions": 6,
+        "commitIds": {
+          "nodes": [
+            {
+              "commit": {
+                "oid": "45938edbb73fae7ad489f2ef9993cfe3128846bc",
+                "parents": {
+                  "nodes": [
+                    {
+                      "oid": "a1b4a73e0b5364ffd979f6bcf30a61be870b7152",
+                      "__typename": "Commit"
+                    }
+                  ],
+                  "__typename": "CommitConnection"
+                },
+                "__typename": "Commit"
+              },
+              "__typename": "PullRequestCommit"
+            },
+            {
+              "commit": {
+                "oid": "fe50ebe90c324e74c4a1c1d1fad45b799fbf74b9",
+                "parents": {
+                  "nodes": [
+                    {
+                      "oid": "45938edbb73fae7ad489f2ef9993cfe3128846bc",
+                      "__typename": "Commit"
+                    },
+                    {
+                      "oid": "5517b19ae63d858c5d09243bced2cfa9969f5ead",
+                      "__typename": "Commit"
+                    }
+                  ],
+                  "__typename": "CommitConnection"
+                },
+                "__typename": "Commit"
+              },
+              "__typename": "PullRequestCommit"
+            },
+            {
+              "commit": {
+                "oid": "e6c8f0c4e971a00044e84a411ce102c5bb90866f",
+                "parents": {
+                  "nodes": [
+                    {
+                      "oid": "fe50ebe90c324e74c4a1c1d1fad45b799fbf74b9",
+                      "__typename": "Commit"
+                    },
+                    {
+                      "oid": "cb00422cec184e03542bfb786426ceb940fa723c",
+                      "__typename": "Commit"
+                    }
+                  ],
+                  "__typename": "CommitConnection"
+                },
+                "__typename": "Commit"
+              },
+              "__typename": "PullRequestCommit"
+            },
+            {
+              "commit": {
+                "oid": "089df11eb6ffbb13161afa9c7d5df6f7efb0ae09",
+                "parents": {
+                  "nodes": [
+                    {
+                      "oid": "e6c8f0c4e971a00044e84a411ce102c5bb90866f",
+                      "__typename": "Commit"
+                    }
+                  ],
+                  "__typename": "CommitConnection"
+                },
+                "__typename": "Commit"
+              },
+              "__typename": "PullRequestCommit"
+            },
+            {
+              "commit": {
+                "oid": "fe205d320ab32c9e4c3d746cb07b615e2d6f3cca",
+                "parents": {
+                  "nodes": [
+                    {
+                      "oid": "089df11eb6ffbb13161afa9c7d5df6f7efb0ae09",
+                      "__typename": "Commit"
+                    }
+                  ],
+                  "__typename": "CommitConnection"
+                },
+                "__typename": "Commit"
+              },
+              "__typename": "PullRequestCommit"
+            }
+          ],
+          "__typename": "PullRequestCommitConnection"
+        },
+        "timelineItems": {
+          "nodes": [],
+          "__typename": "PullRequestTimelineItemsConnection"
+        },
+        "reviews": {
+          "nodes": [
+            {
+              "author": {
+                "login": "MrGriefs",
+                "__typename": "User"
+              },
+              "commit": {
+                "oid": "089df11eb6ffbb13161afa9c7d5df6f7efb0ae09",
+                "__typename": "Commit"
+              },
+              "comments": {
+                "nodes": [],
+                "__typename": "PullRequestReviewCommentConnection"
+              },
+              "authorAssociation": "MEMBER",
+              "state": "CHANGES_REQUESTED",
+              "submittedAt": "2022-01-05T22:15:36Z",
+              "url": "https://github.com/OfficialPawBot/language/pull/7#pullrequestreview-845114787",
+              "__typename": "PullRequestReview"
+            },
+            {
+              "author": {
+                "login": "MrGriefs",
+                "__typename": "User"
+              },
+              "commit": {
+                "oid": "fe205d320ab32c9e4c3d746cb07b615e2d6f3cca",
+                "__typename": "Commit"
+              },
+              "comments": {
+                "nodes": [],
+                "__typename": "PullRequestReviewCommentConnection"
+              },
+              "authorAssociation": "MEMBER",
+              "state": "APPROVED",
+              "submittedAt": "2022-01-27T16:22:09Z",
+              "url": "https://github.com/OfficialPawBot/language/pull/7#pullrequestreview-865116833",
+              "__typename": "PullRequestReview"
+            }
+          ],
+          "__typename": "PullRequestReviewConnection"
+        },
+        "commits": {
+          "totalCount": 5,
+          "nodes": [
+            {
+              "commit": {
+                "checkSuites": {
+                  "nodes": [
+                    {
+                      "databaseId": 4850291646,
+                      "app": {
+                        "name": "GitHub Actions",
+                        "__typename": "App"
+                      },
+                      "conclusion": "SUCCESS",
+                      "resourcePath": "/OfficialPawBot/language/commit/fe205d320ab32c9e4c3d746cb07b615e2d6f3cca/checks?check_suite_id=4850291646",
+                      "status": "COMPLETED",
+                      "url": "https://github.com/OfficialPawBot/language/commit/fe205d320ab32c9e4c3d746cb07b615e2d6f3cca/checks?check_suite_id=4850291646",
+                      "checkRuns": {
+                        "nodes": [
+                          {
+                            "title": null,
+                            "__typename": "CheckRun"
+                          }
+                        ],
+                        "__typename": "CheckRunConnection"
+                      },
+                      "__typename": "CheckSuite"
+                    }
+                  ],
+                  "__typename": "CheckSuiteConnection"
+                },
+                "status": null,
+                "authoredDate": "2022-01-06T11:54:02Z",
+                "committedDate": "2022-01-06T11:54:02Z",
+                "pushedDate": "2022-01-06T11:54:09Z",
+                "oid": "fe205d320ab32c9e4c3d746cb07b615e2d6f3cca",
+                "__typename": "Commit"
+              },
+              "__typename": "PullRequestCommit"
+            }
+          ],
+          "__typename": "PullRequestCommitConnection"
+        },
+        "comments": {
+          "totalCount": 2,
+          "nodes": [
+            {
+              "id": "IC_kwDOFPVO2c47_j6_",
+              "author": {
+                "login": "lesslih",
+                "__typename": "User"
+              },
+              "databaseId": 1006517951,
+              "body": "> Please go ahead and fix this issue on other locales - PRs that introduce partially completed commits cannot be added to the commit history.\r\n\r\nAcknowledged.",
+              "createdAt": "2022-01-06T11:51:44Z",
+              "reactions": {
+                "nodes": [],
+                "__typename": "ReactionConnection"
+              },
+              "__typename": "IssueComment"
+            },
+            {
+              "id": "IC_kwDOFPVO2c489YXf",
+              "author": {
+                "login": "MrGriefs",
+                "__typename": "User"
+              },
+              "databaseId": 1022723551,
+              "body": "Let me know when you're ready to merge.",
+              "createdAt": "2022-01-27T00:17:52Z",
+              "reactions": {
+                "nodes": [],
+                "__typename": "ReactionConnection"
+              },
+              "__typename": "IssueComment"
+            }
+          ],
+          "__typename": "IssueCommentConnection"
+        },
+        "files": {
+          "totalCount": 3,
+          "nodes": [
+            {
+              "path": "en/commands.json",
+              "additions": 2,
+              "deletions": 2,
+              "__typename": "PullRequestChangedFile"
+            },
+            {
+              "path": "es/commands.json",
+              "additions": 2,
+              "deletions": 2,
+              "__typename": "PullRequestChangedFile"
+            },
+            {
+              "path": "fr/commands.json",
+              "additions": 2,
+              "deletions": 2,
+              "__typename": "PullRequestChangedFile"
+            }
+          ],
+          "pageInfo": {
+            "hasNextPage": false,
+            "endCursor": "Mw",
+            "__typename": "PageInfo"
+          },
+          "__typename": "PullRequestChangedFileConnection"
+        },
+        "projectCards": {
+          "nodes": [],
+          "__typename": "ProjectCardConnection"
+        },
+        "__typename": "PullRequest"
+      },
+      "__typename": "Repository"
+    }
+  },
+  "loading": false,
+  "networkStatus": 7
+}

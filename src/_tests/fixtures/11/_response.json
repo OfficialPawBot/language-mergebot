@@ -1,0 +1,335 @@
+{
+  "data": {
+    "repository": {
+      "id": "MDEwOlJlcG9zaXRvcnkzNTE2MjA4MjU=",
+      "pullRequest": {
+        "id": "PR_kwDOFPVO2c4xyJPD",
+        "title": "chore(tests): linting",
+        "createdAt": "2022-01-29T23:17:26Z",
+        "author": {
+          "login": "MrGriefs",
+          "__typename": "User"
+        },
+        "authorAssociation": "MEMBER",
+        "baseRef": {
+          "name": "main",
+          "__typename": "Ref"
+        },
+        "labels": {
+          "nodes": [],
+          "__typename": "LabelConnection"
+        },
+        "isDraft": false,
+        "mergeable": "UNKNOWN",
+        "number": 11,
+        "state": "MERGED",
+        "headRefOid": "aaac545bdb591f46f54ee997467b70e7aa8058be",
+        "changedFiles": 22,
+        "additions": 1371,
+        "deletions": 1278,
+        "commitIds": {
+          "nodes": [
+            {
+              "commit": {
+                "oid": "aaac545bdb591f46f54ee997467b70e7aa8058be",
+                "parents": {
+                  "nodes": [
+                    {
+                      "oid": "08a174e76d98b5e5bce2d903a1b2a619fece4a16",
+                      "__typename": "Commit"
+                    }
+                  ],
+                  "__typename": "CommitConnection"
+                },
+                "__typename": "Commit"
+              },
+              "__typename": "PullRequestCommit"
+            }
+          ],
+          "__typename": "PullRequestCommitConnection"
+        },
+        "timelineItems": {
+          "nodes": [],
+          "__typename": "PullRequestTimelineItemsConnection"
+        },
+        "reviews": {
+          "nodes": [],
+          "__typename": "PullRequestReviewConnection"
+        },
+        "commits": {
+          "totalCount": 1,
+          "nodes": [
+            {
+              "commit": {
+                "checkSuites": {
+                  "nodes": [
+                    {
+                      "databaseId": 5109439652,
+                      "app": {
+                        "name": "Dependabot",
+                        "__typename": "App"
+                      },
+                      "conclusion": null,
+                      "resourcePath": "/OfficialPawBot/language/commit/aaac545bdb591f46f54ee997467b70e7aa8058be/checks?check_suite_id=5109439652",
+                      "status": "QUEUED",
+                      "url": "https://github.com/OfficialPawBot/language/commit/aaac545bdb591f46f54ee997467b70e7aa8058be/checks?check_suite_id=5109439652",
+                      "checkRuns": {
+                        "nodes": [],
+                        "__typename": "CheckRunConnection"
+                      },
+                      "__typename": "CheckSuite"
+                    },
+                    {
+                      "databaseId": 5109439654,
+                      "app": {
+                        "name": "Travis CI",
+                        "__typename": "App"
+                      },
+                      "conclusion": null,
+                      "resourcePath": "/OfficialPawBot/language/commit/aaac545bdb591f46f54ee997467b70e7aa8058be/checks?check_suite_id=5109439654",
+                      "status": "QUEUED",
+                      "url": "https://github.com/OfficialPawBot/language/commit/aaac545bdb591f46f54ee997467b70e7aa8058be/checks?check_suite_id=5109439654",
+                      "checkRuns": {
+                        "nodes": [],
+                        "__typename": "CheckRunConnection"
+                      },
+                      "__typename": "CheckSuite"
+                    },
+                    {
+                      "databaseId": 5109439657,
+                      "app": {
+                        "name": "Azure Pipelines",
+                        "__typename": "App"
+                      },
+                      "conclusion": "SUCCESS",
+                      "resourcePath": "/OfficialPawBot/language/commit/aaac545bdb591f46f54ee997467b70e7aa8058be/checks?check_suite_id=5109439657",
+                      "status": "COMPLETED",
+                      "url": "https://github.com/OfficialPawBot/language/commit/aaac545bdb591f46f54ee997467b70e7aa8058be/checks?check_suite_id=5109439657",
+                      "checkRuns": {
+                        "nodes": [
+                          {
+                            "title": "Build #20220129.3 succeeded",
+                            "__typename": "CheckRun"
+                          }
+                        ],
+                        "__typename": "CheckRunConnection"
+                      },
+                      "__typename": "CheckSuite"
+                    },
+                    {
+                      "databaseId": 5109439758,
+                      "app": {
+                        "name": "GitHub Actions",
+                        "__typename": "App"
+                      },
+                      "conclusion": "SUCCESS",
+                      "resourcePath": "/OfficialPawBot/language/commit/aaac545bdb591f46f54ee997467b70e7aa8058be/checks?check_suite_id=5109439758",
+                      "status": "COMPLETED",
+                      "url": "https://github.com/OfficialPawBot/language/commit/aaac545bdb591f46f54ee997467b70e7aa8058be/checks?check_suite_id=5109439758",
+                      "checkRuns": {
+                        "nodes": [
+                          {
+                            "title": null,
+                            "__typename": "CheckRun"
+                          }
+                        ],
+                        "__typename": "CheckRunConnection"
+                      },
+                      "__typename": "CheckSuite"
+                    },
+                    {
+                      "databaseId": 5109467430,
+                      "app": {
+                        "name": "GitHub Actions",
+                        "__typename": "App"
+                      },
+                      "conclusion": "SUCCESS",
+                      "resourcePath": "/OfficialPawBot/language/commit/aaac545bdb591f46f54ee997467b70e7aa8058be/checks?check_suite_id=5109467430",
+                      "status": "COMPLETED",
+                      "url": "https://github.com/OfficialPawBot/language/commit/aaac545bdb591f46f54ee997467b70e7aa8058be/checks?check_suite_id=5109467430",
+                      "checkRuns": {
+                        "nodes": [
+                          {
+                            "title": null,
+                            "__typename": "CheckRun"
+                          }
+                        ],
+                        "__typename": "CheckRunConnection"
+                      },
+                      "__typename": "CheckSuite"
+                    }
+                  ],
+                  "__typename": "CheckSuiteConnection"
+                },
+                "status": null,
+                "authoredDate": "2022-01-29T23:09:58Z",
+                "committedDate": "2022-01-29T23:09:58Z",
+                "pushedDate": "2022-01-29T23:10:25Z",
+                "oid": "aaac545bdb591f46f54ee997467b70e7aa8058be",
+                "__typename": "Commit"
+              },
+              "__typename": "PullRequestCommit"
+            }
+          ],
+          "__typename": "PullRequestCommitConnection"
+        },
+        "comments": {
+          "totalCount": 0,
+          "nodes": [],
+          "__typename": "IssueCommentConnection"
+        },
+        "files": {
+          "totalCount": 22,
+          "nodes": [
+            {
+              "path": ".prettierrc.json",
+              "additions": 7,
+              "deletions": 0,
+              "__typename": "PullRequestChangedFile"
+            },
+            {
+              "path": ".scripts/lint.js",
+              "additions": 33,
+              "deletions": 0,
+              "__typename": "PullRequestChangedFile"
+            },
+            {
+              "path": "en/commands.json",
+              "additions": 289,
+              "deletions": 294,
+              "__typename": "PullRequestChangedFile"
+            },
+            {
+              "path": "en/core.json",
+              "additions": 11,
+              "deletions": 11,
+              "__typename": "PullRequestChangedFile"
+            },
+            {
+              "path": "en/features.json",
+              "additions": 5,
+              "deletions": 5,
+              "__typename": "PullRequestChangedFile"
+            },
+            {
+              "path": "en/locale.json",
+              "additions": 2,
+              "deletions": 4,
+              "__typename": "PullRequestChangedFile"
+            },
+            {
+              "path": "en/words.json",
+              "additions": 3,
+              "deletions": 3,
+              "__typename": "PullRequestChangedFile"
+            },
+            {
+              "path": "es/commands.json",
+              "additions": 284,
+              "deletions": 286,
+              "__typename": "PullRequestChangedFile"
+            },
+            {
+              "path": "es/core.json",
+              "additions": 11,
+              "deletions": 11,
+              "__typename": "PullRequestChangedFile"
+            },
+            {
+              "path": "es/features.json",
+              "additions": 5,
+              "deletions": 5,
+              "__typename": "PullRequestChangedFile"
+            },
+            {
+              "path": "es/locale.json",
+              "additions": 1,
+              "deletions": 1,
+              "__typename": "PullRequestChangedFile"
+            },
+            {
+              "path": "es/words.json",
+              "additions": 3,
+              "deletions": 3,
+              "__typename": "PullRequestChangedFile"
+            },
+            {
+              "path": "fr/commands.json",
+              "additions": 284,
+              "deletions": 286,
+              "__typename": "PullRequestChangedFile"
+            },
+            {
+              "path": "fr/core.json",
+              "additions": 11,
+              "deletions": 11,
+              "__typename": "PullRequestChangedFile"
+            },
+            {
+              "path": "fr/locale.json",
+              "additions": 1,
+              "deletions": 1,
+              "__typename": "PullRequestChangedFile"
+            },
+            {
+              "path": "package-lock.json",
+              "additions": 110,
+              "deletions": 44,
+              "__typename": "PullRequestChangedFile"
+            },
+            {
+              "path": "package.json",
+              "additions": 7,
+              "deletions": 1,
+              "__typename": "PullRequestChangedFile"
+            },
+            {
+              "path": "sv/commands.json",
+              "additions": 287,
+              "deletions": 295,
+              "__typename": "PullRequestChangedFile"
+            },
+            {
+              "path": "sv/core.json",
+              "additions": 10,
+              "deletions": 10,
+              "__typename": "PullRequestChangedFile"
+            },
+            {
+              "path": "sv/features.json",
+              "additions": 4,
+              "deletions": 4,
+              "__typename": "PullRequestChangedFile"
+            },
+            {
+              "path": "sv/locale.json",
+              "additions": 1,
+              "deletions": 1,
+              "__typename": "PullRequestChangedFile"
+            },
+            {
+              "path": "sv/words.json",
+              "additions": 2,
+              "deletions": 2,
+              "__typename": "PullRequestChangedFile"
+            }
+          ],
+          "pageInfo": {
+            "hasNextPage": false,
+            "endCursor": "MjI",
+            "__typename": "PageInfo"
+          },
+          "__typename": "PullRequestChangedFileConnection"
+        },
+        "projectCards": {
+          "nodes": [],
+          "__typename": "ProjectCardConnection"
+        },
+        "__typename": "PullRequest"
+      },
+      "__typename": "Repository"
+    }
+  },
+  "loading": false,
+  "networkStatus": 7
+}

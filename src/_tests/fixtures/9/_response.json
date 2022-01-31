@@ -1,0 +1,449 @@
+{
+  "data": {
+    "repository": {
+      "id": "MDEwOlJlcG9zaXRvcnkzNTE2MjA4MjU=",
+      "pullRequest": {
+        "id": "PR_kwDOFPVO2c4xpU9u",
+        "title": "feat: aggregation and tests",
+        "createdAt": "2022-01-27T00:08:07Z",
+        "author": {
+          "login": "MrGriefs",
+          "__typename": "User"
+        },
+        "authorAssociation": "MEMBER",
+        "baseRef": {
+          "name": "main",
+          "__typename": "Ref"
+        },
+        "labels": {
+          "nodes": [
+            {
+              "name": "feature",
+              "__typename": "Label"
+            }
+          ],
+          "__typename": "LabelConnection"
+        },
+        "isDraft": false,
+        "mergeable": "UNKNOWN",
+        "number": 9,
+        "state": "MERGED",
+        "headRefOid": "fe960260a97c9f5889fa721f809ef06c01db2c3a",
+        "changedFiles": 10,
+        "additions": 1599,
+        "deletions": 2,
+        "commitIds": {
+          "nodes": [
+            {
+              "commit": {
+                "oid": "9d11fdc2f8d575e9bcc1a1c43903823500707707",
+                "parents": {
+                  "nodes": [
+                    {
+                      "oid": "52e462c0bdae6d360b320c292e212232e701a2c1",
+                      "__typename": "Commit"
+                    }
+                  ],
+                  "__typename": "CommitConnection"
+                },
+                "__typename": "Commit"
+              },
+              "__typename": "PullRequestCommit"
+            },
+            {
+              "commit": {
+                "oid": "a35ff7d657a42a5fc946e8f5004243eb924aa978",
+                "parents": {
+                  "nodes": [
+                    {
+                      "oid": "9d11fdc2f8d575e9bcc1a1c43903823500707707",
+                      "__typename": "Commit"
+                    }
+                  ],
+                  "__typename": "CommitConnection"
+                },
+                "__typename": "Commit"
+              },
+              "__typename": "PullRequestCommit"
+            },
+            {
+              "commit": {
+                "oid": "a8b76e68ca39d360d121f2697b576ee543a9d30e",
+                "parents": {
+                  "nodes": [
+                    {
+                      "oid": "a35ff7d657a42a5fc946e8f5004243eb924aa978",
+                      "__typename": "Commit"
+                    }
+                  ],
+                  "__typename": "CommitConnection"
+                },
+                "__typename": "Commit"
+              },
+              "__typename": "PullRequestCommit"
+            },
+            {
+              "commit": {
+                "oid": "6b29f6a7496a19e9843ddd10d4a66aa77bbd14a6",
+                "parents": {
+                  "nodes": [
+                    {
+                      "oid": "a8b76e68ca39d360d121f2697b576ee543a9d30e",
+                      "__typename": "Commit"
+                    }
+                  ],
+                  "__typename": "CommitConnection"
+                },
+                "__typename": "Commit"
+              },
+              "__typename": "PullRequestCommit"
+            },
+            {
+              "commit": {
+                "oid": "9c4779f66b07031856249168c9a31fcb22fb1c4c",
+                "parents": {
+                  "nodes": [
+                    {
+                      "oid": "6b29f6a7496a19e9843ddd10d4a66aa77bbd14a6",
+                      "__typename": "Commit"
+                    }
+                  ],
+                  "__typename": "CommitConnection"
+                },
+                "__typename": "Commit"
+              },
+              "__typename": "PullRequestCommit"
+            },
+            {
+              "commit": {
+                "oid": "cb88f05ef3b8bf354910aa51674cac3a53c0512a",
+                "parents": {
+                  "nodes": [
+                    {
+                      "oid": "9c4779f66b07031856249168c9a31fcb22fb1c4c",
+                      "__typename": "Commit"
+                    }
+                  ],
+                  "__typename": "CommitConnection"
+                },
+                "__typename": "Commit"
+              },
+              "__typename": "PullRequestCommit"
+            },
+            {
+              "commit": {
+                "oid": "5cccec63445aec6906d1643903bd9d057890b175",
+                "parents": {
+                  "nodes": [
+                    {
+                      "oid": "cb88f05ef3b8bf354910aa51674cac3a53c0512a",
+                      "__typename": "Commit"
+                    }
+                  ],
+                  "__typename": "CommitConnection"
+                },
+                "__typename": "Commit"
+              },
+              "__typename": "PullRequestCommit"
+            },
+            {
+              "commit": {
+                "oid": "56e06ac1391e306a33f6ad4b4814bee8ae1d8bda",
+                "parents": {
+                  "nodes": [
+                    {
+                      "oid": "5cccec63445aec6906d1643903bd9d057890b175",
+                      "__typename": "Commit"
+                    }
+                  ],
+                  "__typename": "CommitConnection"
+                },
+                "__typename": "Commit"
+              },
+              "__typename": "PullRequestCommit"
+            },
+            {
+              "commit": {
+                "oid": "380a2a0a30390ca50a544425cf986a000262223e",
+                "parents": {
+                  "nodes": [
+                    {
+                      "oid": "56e06ac1391e306a33f6ad4b4814bee8ae1d8bda",
+                      "__typename": "Commit"
+                    }
+                  ],
+                  "__typename": "CommitConnection"
+                },
+                "__typename": "Commit"
+              },
+              "__typename": "PullRequestCommit"
+            },
+            {
+              "commit": {
+                "oid": "235dfc79f0047dbb0af750993baee32e53b7e6ac",
+                "parents": {
+                  "nodes": [
+                    {
+                      "oid": "380a2a0a30390ca50a544425cf986a000262223e",
+                      "__typename": "Commit"
+                    }
+                  ],
+                  "__typename": "CommitConnection"
+                },
+                "__typename": "Commit"
+              },
+              "__typename": "PullRequestCommit"
+            },
+            {
+              "commit": {
+                "oid": "6b258b6ffa17ea5d82832adb274cd18cd2a87af0",
+                "parents": {
+                  "nodes": [
+                    {
+                      "oid": "235dfc79f0047dbb0af750993baee32e53b7e6ac",
+                      "__typename": "Commit"
+                    }
+                  ],
+                  "__typename": "CommitConnection"
+                },
+                "__typename": "Commit"
+              },
+              "__typename": "PullRequestCommit"
+            },
+            {
+              "commit": {
+                "oid": "fe960260a97c9f5889fa721f809ef06c01db2c3a",
+                "parents": {
+                  "nodes": [
+                    {
+                      "oid": "6b258b6ffa17ea5d82832adb274cd18cd2a87af0",
+                      "__typename": "Commit"
+                    }
+                  ],
+                  "__typename": "CommitConnection"
+                },
+                "__typename": "Commit"
+              },
+              "__typename": "PullRequestCommit"
+            }
+          ],
+          "__typename": "PullRequestCommitConnection"
+        },
+        "timelineItems": {
+          "nodes": [
+            {
+              "createdAt": "2022-01-28T15:08:30Z",
+              "__typename": "ReadyForReviewEvent"
+            }
+          ],
+          "__typename": "PullRequestTimelineItemsConnection"
+        },
+        "reviews": {
+          "nodes": [],
+          "__typename": "PullRequestReviewConnection"
+        },
+        "commits": {
+          "totalCount": 12,
+          "nodes": [
+            {
+              "commit": {
+                "checkSuites": {
+                  "nodes": [
+                    {
+                      "databaseId": 5098443986,
+                      "app": {
+                        "name": "Dependabot",
+                        "__typename": "App"
+                      },
+                      "conclusion": null,
+                      "resourcePath": "/OfficialPawBot/language/commit/fe960260a97c9f5889fa721f809ef06c01db2c3a/checks?check_suite_id=5098443986",
+                      "status": "QUEUED",
+                      "url": "https://github.com/OfficialPawBot/language/commit/fe960260a97c9f5889fa721f809ef06c01db2c3a/checks?check_suite_id=5098443986",
+                      "checkRuns": {
+                        "nodes": [],
+                        "__typename": "CheckRunConnection"
+                      },
+                      "__typename": "CheckSuite"
+                    },
+                    {
+                      "databaseId": 5098444135,
+                      "app": {
+                        "name": "Travis CI",
+                        "__typename": "App"
+                      },
+                      "conclusion": null,
+                      "resourcePath": "/OfficialPawBot/language/commit/fe960260a97c9f5889fa721f809ef06c01db2c3a/checks?check_suite_id=5098444135",
+                      "status": "QUEUED",
+                      "url": "https://github.com/OfficialPawBot/language/commit/fe960260a97c9f5889fa721f809ef06c01db2c3a/checks?check_suite_id=5098444135",
+                      "checkRuns": {
+                        "nodes": [],
+                        "__typename": "CheckRunConnection"
+                      },
+                      "__typename": "CheckSuite"
+                    },
+                    {
+                      "databaseId": 5098444140,
+                      "app": {
+                        "name": "Azure Pipelines",
+                        "__typename": "App"
+                      },
+                      "conclusion": "SUCCESS",
+                      "resourcePath": "/OfficialPawBot/language/commit/fe960260a97c9f5889fa721f809ef06c01db2c3a/checks?check_suite_id=5098444140",
+                      "status": "COMPLETED",
+                      "url": "https://github.com/OfficialPawBot/language/commit/fe960260a97c9f5889fa721f809ef06c01db2c3a/checks?check_suite_id=5098444140",
+                      "checkRuns": {
+                        "nodes": [
+                          {
+                            "title": "Build #20220128.2 succeeded",
+                            "__typename": "CheckRun"
+                          }
+                        ],
+                        "__typename": "CheckRunConnection"
+                      },
+                      "__typename": "CheckSuite"
+                    },
+                    {
+                      "databaseId": 5098444179,
+                      "app": {
+                        "name": "GitHub Actions",
+                        "__typename": "App"
+                      },
+                      "conclusion": "SUCCESS",
+                      "resourcePath": "/OfficialPawBot/language/commit/fe960260a97c9f5889fa721f809ef06c01db2c3a/checks?check_suite_id=5098444179",
+                      "status": "COMPLETED",
+                      "url": "https://github.com/OfficialPawBot/language/commit/fe960260a97c9f5889fa721f809ef06c01db2c3a/checks?check_suite_id=5098444179",
+                      "checkRuns": {
+                        "nodes": [
+                          {
+                            "title": null,
+                            "__typename": "CheckRun"
+                          }
+                        ],
+                        "__typename": "CheckRunConnection"
+                      },
+                      "__typename": "CheckSuite"
+                    },
+                    {
+                      "databaseId": 5098444683,
+                      "app": {
+                        "name": "GitHub Actions",
+                        "__typename": "App"
+                      },
+                      "conclusion": "SUCCESS",
+                      "resourcePath": "/OfficialPawBot/language/commit/fe960260a97c9f5889fa721f809ef06c01db2c3a/checks?check_suite_id=5098444683",
+                      "status": "COMPLETED",
+                      "url": "https://github.com/OfficialPawBot/language/commit/fe960260a97c9f5889fa721f809ef06c01db2c3a/checks?check_suite_id=5098444683",
+                      "checkRuns": {
+                        "nodes": [
+                          {
+                            "title": null,
+                            "__typename": "CheckRun"
+                          }
+                        ],
+                        "__typename": "CheckRunConnection"
+                      },
+                      "__typename": "CheckSuite"
+                    }
+                  ],
+                  "__typename": "CheckSuiteConnection"
+                },
+                "status": null,
+                "authoredDate": "2022-01-28T15:06:49Z",
+                "committedDate": "2022-01-28T15:06:49Z",
+                "pushedDate": "2022-01-28T15:06:56Z",
+                "oid": "fe960260a97c9f5889fa721f809ef06c01db2c3a",
+                "__typename": "Commit"
+              },
+              "__typename": "PullRequestCommit"
+            }
+          ],
+          "__typename": "PullRequestCommitConnection"
+        },
+        "comments": {
+          "totalCount": 0,
+          "nodes": [],
+          "__typename": "IssueCommentConnection"
+        },
+        "files": {
+          "totalCount": 10,
+          "nodes": [
+            {
+              "path": ".github/workflows/aggregate.yml",
+              "additions": 21,
+              "deletions": 0,
+              "__typename": "PullRequestChangedFile"
+            },
+            {
+              "path": ".gitignore",
+              "additions": 2,
+              "deletions": 1,
+              "__typename": "PullRequestChangedFile"
+            },
+            {
+              "path": ".scripts/aggregate.js",
+              "additions": 46,
+              "deletions": 0,
+              "__typename": "PullRequestChangedFile"
+            },
+            {
+              "path": ".scripts/test.js",
+              "additions": 51,
+              "deletions": 0,
+              "__typename": "PullRequestChangedFile"
+            },
+            {
+              "path": "AGGREGATE.md",
+              "additions": 47,
+              "deletions": 0,
+              "__typename": "PullRequestChangedFile"
+            },
+            {
+              "path": "README.md",
+              "additions": 2,
+              "deletions": 1,
+              "__typename": "PullRequestChangedFile"
+            },
+            {
+              "path": "azure-pipelines.yml",
+              "additions": 18,
+              "deletions": 0,
+              "__typename": "PullRequestChangedFile"
+            },
+            {
+              "path": "index.js",
+              "additions": 23,
+              "deletions": 0,
+              "__typename": "PullRequestChangedFile"
+            },
+            {
+              "path": "package-lock.json",
+              "additions": 1360,
+              "deletions": 0,
+              "__typename": "PullRequestChangedFile"
+            },
+            {
+              "path": "package.json",
+              "additions": 29,
+              "deletions": 0,
+              "__typename": "PullRequestChangedFile"
+            }
+          ],
+          "pageInfo": {
+            "hasNextPage": false,
+            "endCursor": "MTA",
+            "__typename": "PageInfo"
+          },
+          "__typename": "PullRequestChangedFileConnection"
+        },
+        "projectCards": {
+          "nodes": [],
+          "__typename": "ProjectCardConnection"
+        },
+        "__typename": "PullRequest"
+      },
+      "__typename": "Repository"
+    }
+  },
+  "loading": false,
+  "networkStatus": 7
+}

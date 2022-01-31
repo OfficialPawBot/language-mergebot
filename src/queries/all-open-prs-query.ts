@@ -5,7 +5,7 @@ import { noNullish } from "../util/util";
 
 const getAllOpenPRsAndCardIDsQuery: TypedDocumentNode<GetAllOpenPRsAndCardIDs, GetAllOpenPRsAndCardIDsVariables> = gql`
 query GetAllOpenPRsAndCardIDs($endCursor: String) {
-  repository(owner: "DefinitelyTyped", name: "DefinitelyTyped") {
+  repository(owner: "OfficialPawBot", name: "language") {
     id
     pullRequests(states: OPEN, orderBy: { field: UPDATED_AT, direction: DESC }, first: 100, after: $endCursor) {
       nodes {

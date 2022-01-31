@@ -8,7 +8,7 @@ export { getLabels, GetProjectColumns };
 
 const GetLabelsQuery: TypedDocumentNode<GetLabels, GetLabelsVariables> = gql`
 query GetLabels($endCursor: String) {
-  repository(name: "DefinitelyTyped", owner: "DefinitelyTyped") {
+  repository(name: "language", owner: "OfficialPawBot") {
     id
     labels(first: 100, after: $endCursor) {
       nodes {
@@ -38,9 +38,9 @@ async function getLabels() {
 
 const GetProjectColumns: TypedDocumentNode<GetProjectColumns, never> = gql`
 query GetProjectColumns {
-  repository(name:"DefinitelyTyped", owner:"DefinitelyTyped") {
+  repository(name:"language", owner:"OfficialPawBot") {
     id
-    project(number: 5) {
+    project(number: 1) {
       id
       columns(first: 30) {
         nodes {

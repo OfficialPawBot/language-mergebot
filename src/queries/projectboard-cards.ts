@@ -4,9 +4,9 @@ import { GetProjectBoardCards } from "./schema/GetProjectBoardCards";
 
 const GetProjectBoardCardsQuery: TypedDocumentNode<GetProjectBoardCards, never> = gql`
   query GetProjectBoardCards {
-    repository(owner: "DefinitelyTyped", name: "DefinitelyTyped") {
+    repository(owner: "OfficialPawBot", name: "language") {
       id
-      project(number: 5) {
+      project(number: 1) {
         id
         columns(first: 100) {
           nodes {

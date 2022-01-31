@@ -15,7 +15,7 @@ import { noNullish } from "../util/util";
 /** This is a GraphQL AST tree */
 const GetPRInfoQueryFirst: TypedDocumentNode<PR, PRVariables> = gql`
 query PR($prNumber: Int!) {
-    repository(owner: "DefinitelyTyped", name: "DefinitelyTyped") {
+    repository(owner: "OfficialPawBot", name: "language") {
       id
       pullRequest(number: $prNumber) {
         id
@@ -213,7 +213,7 @@ export async function getPRInfoFirst(prNumber: number) {
 // Repeat just the file part, since that's all we need here
 const GetPRInfoQueryRest: TypedDocumentNode<PRFiles, PRFilesVariables> = gql`
 query PRFiles($prNumber: Int!, $endCursor: String) {
-    repository(owner: "DefinitelyTyped", name: "DefinitelyTyped") {
+    repository(owner: "OfficialPawBot", name: "language") {
       pullRequest(number: $prNumber) {
         files(first: 100, after: $endCursor) {
           totalCount

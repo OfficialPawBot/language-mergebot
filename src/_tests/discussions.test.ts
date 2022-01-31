@@ -16,10 +16,10 @@ describe(canHandleRequest, () => {
 
 describe(extractNPMReference, () => {
     const eventActions = [
-        ["[node] my thingy", "node"],
-        ["OK [react]", "react"],
-        ["I  think [@typescript/twoslash] need improving ", "@typescript/twoslash"],
-        ["[@types/node] needs X", "node"],
+        ["[es] my thingy", "es"],
+        ["OK [fr]", "fr"],
+        ["I  think [sv] need improving ", "sv"],
+        ["[en] needs X", "en"],
     ] as const;
 
     test.concurrent.each(eventActions)("(%s, %s) is %s", async (title, result) => {

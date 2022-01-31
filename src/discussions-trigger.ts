@@ -40,41 +40,40 @@ export function extractNPMReference(discussion: { title: string }) {
     const title = discussion.title;
     if (title.includes("[") && title.includes("]")) {
         const full = title.split("[")[1]!.split("]")[0];
-        return full!.replace("@types/", "");
+        return full!.replace("locale/", "");
     }
     return undefined;
 }
 
 const couldNotFindMessage = txt`
-  |Hi, we could not find a reference to the types you are talking about in this discussion. 
-  |Please edit the title to include the name on npm inside square brackets.
+  |Hi, we could not find a reference to the locale you are talking about in this discussion. 
+  |Please edit the title to include the ISO 639-1 name inside square brackets.
   |
   |E.g.
-  |- \`"[@typescript/vfs] Does not x, y"\`
-  |- \`"Missing x inside [node]"\`
-  |- \`"[express] Broken support for template types"\`
+  |- \`"[en] Does not x, y"\`
+  |- \`"Missing x inside [fr]"\`
+  |- \`"[es] Incorrect translation for x"\`
   |
-  |By doing this, I can ping the folks who maintain the types you are referring to.
+  |By doing this, I can ping the folks who maintain the locales you are referring to.
 `;
 
 const errorsGettingOwners = (str: string) =>  txt`
-  |Hi, we could not find [${str}] in DefinitelyTyped, is there possibly a typo? 
+  |Hi, we could not find [${str}], is there possibly a typo? 
 `;
 
 const couldNotFindOwners = (str: string) =>  txt`
   |Hi, we had an issue getting the owners for [${str}] - first check if you have a typeo, otherwise please raise an issue on 
-  |DefinitelyTyped/dt-mergebot if the module exists on DT but this bot could not find information for it.
+  |OfficialPawBot/language-mergebot if the locale exists but this bot could not find information for it.
 `;
 
 
 const gotAReferenceMessage = (module: string, owners: string[]) => txt`
   |Thanks for the discussion about "${module}", some useful links for everyone:
   | 
-  | - [npm](https://www.npmjs.com/package/${module})
-  | - [DT](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/${module})
-  | - [Related discussions](https://github.com/DefinitelyTyped/DefinitelyTyped/discussions?discussions_q=label%3A%22Pkg%3A+${module}%22)
+  | - [Locale](https://github.com/OfficialPawBot/language/blob/main/${module})
+  | - [Related discussions](https://github.com/OfficialPawBot/language/discussions?discussions_q=label%3A%22Loc%3A+${module}%22)
   |
-  |Pinging the DT module owners: ${owners.map(o => "@" + o).join(", ")}.
+  |Pinging the locale owners: ${owners.map(o => "@" + o).join(", ")}.
 `;
 
 
@@ -84,7 +83,7 @@ async function pingAuthorsAndSetUpDiscussion(discussion: Discussion) {
         // Could not find a types reference
         await updateOrCreateMainComment(discussion, couldNotFindMessage);
     } else {
-        const owners = await getOwnersOfPackage(aboutNPMRef, "master", fetchFile);
+        const owners = await getOwnersOfPackage(aboutNPMRef, "main", fetchFile);
         if (owners instanceof Error) {
             await updateOrCreateMainComment(discussion, errorsGettingOwners(aboutNPMRef));
         }  else if (!owners) {
@@ -102,14 +101,14 @@ async function updateDiscordWithRequest(discussion: Discussion) {
     if (!discordWebhookAddress) throw new Error("DT_MODULE_REQ_DISCORD_WEBHOOK not set in ENV");
 
     // https://birdie0.github.io/discord-webhooks-guide/discord_webhook.html
-    const webhook = {  content: `New DT Module requested:`, embeds: [ { title: discussion.title, url: discussion.html_url } ] };
+    const webhook = {  content: `New Locale requested:`, embeds: [ { title: discussion.title, url: discussion.html_url } ] };
     await fetch(discordWebhookAddress, { method: "POST", body: JSON.stringify(webhook), headers: { "content-type": "application/json" } });
 }
 
 
 async function updateOrCreateMainComment(discussion: Discussion, message: string) {
     const discussionComments = await getCommentsForDiscussionNumber(discussion.number);
-    const previousComment = discussionComments.find(c => c.author.login === "typescript-bot");
+    const previousComment = discussionComments.find(c => c.author.login === "just-a-paw-bot");
     if (previousComment) {
         await client.mutate(createMutation<any>("updateDiscussionComment" as any, { body: message, commentId: previousComment.id }));
     } else {
@@ -135,7 +134,7 @@ async function getLabelByName(name: string) {
     const info = await client.query({
         query: gql`
           query GetLabel($name: String!) {
-            repository(name: "DefinitelyTyped", owner: "DefinitelyTyped") {
+            repository(name: "language", owner: "OfficialPawBot") {
               id
               name
               labels(query: $name, first: 1) {
@@ -158,7 +157,7 @@ async function getCommentsForDiscussionNumber(number: number) {
     const info = await client.query({
         query: gql`
           query GetDiscussionComments($discussionNumber: Int!) {
-            repository(name: "DefinitelyTyped", owner: "DefinitelyTyped") {
+            repository(name: "language", owner: "OfficialPawBot") {
               name
               discussion(number: $discussionNumber) {
                 comments(first: 100) {

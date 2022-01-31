@@ -80,7 +80,6 @@ interface ExtendedPrInfo extends PrInfo {
     readonly hasMultiplePackages: boolean; // not counting infra files
     readonly hasDefinitions: boolean;
     readonly hasTests: boolean;
-    readonly isUntested: boolean;
     readonly newPackages: readonly string[];
     readonly hasNewPackages: boolean;
     readonly hasEditedPackages: boolean;
@@ -103,11 +102,10 @@ function extendPrInfo(info: PrInfo): ExtendedPrInfo {
     const hasMultiplePackages = packages.length > 1;
     const hasDefinitions = info.pkgInfo.some(p => p.files.some(f => f.kind === "definition"));
     const hasTests = info.pkgInfo.some(p => p.files.some(f => f.kind === "test"));
-    const isUntested = hasDefinitions && !hasTests;
     const newPackages = noNullish(info.pkgInfo.map(p => p.kind === "add" ? p.name : null));
     const hasNewPackages = newPackages.length > 0;
     const hasEditedPackages = packages.length > newPackages.length;
-    const requireMaintainer = possiblyEditsInfra || checkConfig || hasMultiplePackages || isUntested || hasNewPackages || tooManyOwners;
+    const requireMaintainer = possiblyEditsInfra || checkConfig || hasMultiplePackages || hasNewPackages || tooManyOwners;
     const blessable = !(hasNewPackages || possiblyEditsInfra || noOtherOwners);
     const blessingKind = getBlessingKind();
     const approvedReviews = info.reviews.filter(r => r.type === "approved") as ExtendedPrInfo["approvedReviews"];
@@ -135,7 +133,7 @@ function extendPrInfo(info: PrInfo): ExtendedPrInfo {
         allOwners, otherOwners, noOtherOwners, tooManyOwners, editsOwners,
         canBeSelfMerged, hasValidMergeRequest, pendingCriticalPackages, approved, approverKind,
         requireMaintainer, blessable, blessingKind, failedCI, blockedCI, ciResult, staleness,
-        packages, hasMultiplePackages, hasDefinitions, hasTests, isUntested, newPackages, hasNewPackages, hasEditedPackages,
+        packages, hasMultiplePackages, hasDefinitions, hasTests, newPackages, hasNewPackages, hasEditedPackages,
         approvedReviews, changereqReviews, staleReviews, approvedBy, hasChangereqs,
         needsAuthorAction, reviewColumn, isAuthor
     };
@@ -235,8 +233,8 @@ export function process(prInfo: BotResult,
     label("The CI failed", info.failedCI);
     label("The CI is blocked", info.ciResult === "action_required");
     label("Revision needed", info.hasChangereqs);
-    label("Critical package", info.popularityLevel === "Critical");
-    label("Popular package", info.popularityLevel === "Popular");
+    label("Critical locale", info.popularityLevel === "Critical");
+    label("Popular locale", info.popularityLevel === "Popular");
     label("Other Approved", info.approvedBy.includes("other"));
     label("Owner Approved",
           info.approvedBy.includes("owner")
@@ -246,17 +244,16 @@ export function process(prInfo: BotResult,
     label("Edits Owners", info.editsOwners);
     label("Edits Infrastructure", info.editsInfra);
     label("Possibly Edits Infrastructure", info.possiblyEditsInfra && !info.editsInfra);
-    label("Edits multiple packages", info.hasMultiplePackages);
+    label("Edits multiple locales", info.hasMultiplePackages);
     label("Author is Owner", info.authorIsOwner);
     label("No Other Owners", info.hasEditedPackages && info.noOtherOwners);
     label("Too Many Owners", info.tooManyOwners);
     label("Check Config", info.checkConfig);
-    label("Untested Change", info.isUntested);
     label("Huge Change", info.hugeChange);
     if (info.staleness?.state === "nearly" || info.staleness?.state === "done") label(info.staleness.kind);
 
     // Update intro comment
-    post({ tag: "welcome", status: createWelcomeComment(info, post) });
+    post({ tag: "welcome", status: createWelcomeComment(info) });
 
     // Ping reviewers when needed
     const headCommitAbbrOid = abbrOid(info.headCommitOid);
@@ -329,7 +326,7 @@ export function process(prInfo: BotResult,
     }
 
     if (!actions.shouldMerge && info.mergeRequestUser) {
-        post(Comments.WaitUntilMergeIsOK(info.mergeRequestUser, headCommitAbbrOid, urls.workflow, info.mainBotCommentID));
+        post(Comments.WaitUntilMergeIsOK(info.mergeRequestUser, headCommitAbbrOid, info.mainBotCommentID));
     }
 
     // Has it: got no DT tests but is approved by DT modules and basically blocked by the DT maintainers - and it has been over 3 days?
@@ -371,16 +368,14 @@ function makeStaleness(now: Date, author: string, ownersToPing: string[]) { // c
     };
 }
 
-function createWelcomeComment(info: ExtendedPrInfo, post: (c: Comments.Comment) => void) {
+function createWelcomeComment(info: ExtendedPrInfo) {
     let content = "";
     function display(...lines: string[]) {
         lines.forEach(line => content += line + "\n");
     }
 
-    const testsLink = info.hasNewPackages ? urls.testingNewPackages : urls.testingEditedPackages;
-
     const specialWelcome = !info.isFirstContribution ? `` :
-        txt`| I see this is your first time submitting to DefinitelyTyped 👋
+        txt`| I see this is your first time submitting to Paw Bot Language 👋
              — I'm the local bot who will help you through the process of getting things through.`;
     display(`@${info.author} Thank you for submitting this PR!${specialWelcome}`,
             ``,
@@ -389,17 +384,15 @@ function createWelcomeComment(info: ExtendedPrInfo, post: (c: Comments.Comment) 
     const criticalNum = info.pkgInfo.reduce((num,pkg) => pkg.popularityLevel === "Critical" ? num+1 : num, 0);
     if (criticalNum === 0 && info.popularityLevel === "Critical") throw new Error("Internal Error: unexpected criticalNum === 0");
     const requiredApprover =
-        info.approverKind === "other" ? "type definition owners, DT maintainers or others"
-        : info.approverKind === "maintainer" ? "a DT maintainer"
-        : criticalNum <= 1 ? "type definition owners or DT maintainers"
-        : "all owners or a DT maintainer";
+        info.approverKind === "other" ? "locale owners, maintainers or others"
+        : info.approverKind === "maintainer" ? "a maintainer"
+        : criticalNum <= 1 ? "locale owners or maintainers"
+        : "all owners or a maintainer";
     const RequiredApprover = requiredApprover[0]!.toUpperCase() + requiredApprover.substring(1);
 
-    if (info.isUntested) {
-        post(Comments.SuggestTesting(info.author, testsLink));
-    } else if (info.possiblyEditsInfra) {
+    if (info.possiblyEditsInfra) {
         display(``,
-                `This PR ${info.editsInfra ? "touches" : "might touch"} some part of DefinitelyTyped infrastructure, so ${
+                `This PR ${info.editsInfra ? "touches" : "might touch"} some part of Paw Bot infrastructure, so ${
                  requiredApprover} will need to review it. This is rare — did you mean to do this?`);
     }
 
@@ -410,7 +403,7 @@ function createWelcomeComment(info: ExtendedPrInfo, post: (c: Comments.Comment) 
           urls.review(info.pr_number)}/${info.headCommitOid}#diff-${sha256(f.path)})`;
 
     display(``,
-            `## ${announceList("package", info.packages)} in this PR${
+            `## ${announceList("locale", info.packages)} in this PR${
               info.editsInfra ? " (and infra files)"
               : info.tooManyFiles ? " (and possibly others)"
               : ""}`,
@@ -426,11 +419,8 @@ function createWelcomeComment(info: ExtendedPrInfo, post: (c: Comments.Comment) 
     for (const p of info.pkgInfo) {
         if (p.name === null) continue;
         const kind = p.kind === "add" ? " (*new!*)" : p.kind === "delete" ? " (*probably deleted!*)" : "";
-        const urlPart = p.name.replace(/^(.*?)__(.)/, "@$1/$2");
         const authorIsOwner = !p.owners.some(info.isAuthor) ? [] : [`(author is owner)`];
-        display([`* \`${p.name}\`${kind} —`,
-                 `[on npm](https://www.npmjs.com/package/${urlPart}),`,
-                 `[on unpkg](https://unpkg.com/browse/${urlPart}@latest/)`,
+        display([`* \`${p.name}\`${kind}`,
                  ...authorIsOwner].join(" "));
         const approvers = info.approvedReviews.filter(r => p.owners.some(o => sameUser(o, r.reviewer))).map(r => r.reviewer);
         if (approvers.length) {
@@ -446,7 +436,7 @@ function createWelcomeComment(info: ExtendedPrInfo, post: (c: Comments.Comment) 
         let showSuspects = false;
         for (const file of p.files) {
             if (!file.suspect) continue;
-            if (!showSuspects) display(`  - Config files to check:`);
+            if (!showSuspects) display(`  - Files to check:`);
             display(`    - ${reviewLink(file)}: ${file.suspect}`);
             showSuspects = true;
         }
@@ -460,8 +450,8 @@ function createWelcomeComment(info: ExtendedPrInfo, post: (c: Comments.Comment) 
     if (addedSelfToManyOwners > 0) {
         display(``,
                 txt`@${info.author}: I see that you have added yourself as an
-                    owner${addedSelfToManyOwners > 1 ? " to several packages" : ""},
-                    are you sure you want to [become an owner](${urls.definitionOwners})?`);
+                    owner${addedSelfToManyOwners > 1 ? " to several locales" : ""},
+                    are you sure you want to become an owner?`);
     }
 
     // Lets the author know who needs to review this
@@ -471,25 +461,22 @@ function createWelcomeComment(info: ExtendedPrInfo, post: (c: Comments.Comment) 
     if (info.blessingKind === "merge") {
         display("This PR can be merged.");
     } else if (info.hasNewPackages) {
-        display(txt`This PR adds a new definition, so it needs to be reviewed by
+        display(txt`This PR adds a new locale, so it needs to be reviewed by
                     ${requiredApprover} before it can be merged.`);
     } else if (info.popularityLevel === "Critical" && info.blessingKind !== "review") {
-        display(txt`Because this is a widely-used package, ${requiredApprover}
+        display(txt`Because this is a widely-used locale, ${requiredApprover}
                     will need to review it before it can be merged.`);
     } else if (!info.requireMaintainer) {
-        const and = info.hasDefinitions && info.hasTests
-            ? "and updated the tests (👏)"
-            : "and there were no type definition changes";
-        display(txt`Because you edited one package ${and}, I can help you merge this PR
+        display(txt`Because you edited one locale, I can help you merge this PR
                     once someone else signs off on it.`);
     } else if (info.blessingKind === "review") {
         display("This PR can be merged once it's reviewed.");
     } else {
         if (info.noOtherOwners) {
-            display(txt`There aren't any other owners of this package,
+            display(txt`There aren't any other owners of this locale,
                         so ${requiredApprover} will review it.`);
         } else if (info.hasMultiplePackages) {
-            display(txt`Because this PR edits multiple packages, it can be merged
+            display(txt`Because this PR edits multiple locales, it can be merged
                         once it's reviewed by ${requiredApprover}.`);
         } else if (info.checkConfig) {
             display(txt`Because this PR edits the configuration file, it can be merged
@@ -500,11 +487,6 @@ function createWelcomeComment(info: ExtendedPrInfo, post: (c: Comments.Comment) 
         } else {
             display(`This PR can be merged once it's reviewed by ${requiredApprover}.`);
         }
-    }
-
-    if (!info.tooManyFiles) {
-        display(``,
-                `You can test the changes of this PR [in the Playground](${urls.playground(info.pr_number)}).`);
     }
 
     display(``,
@@ -519,19 +501,19 @@ function createWelcomeComment(info: ExtendedPrInfo, post: (c: Comments.Comment) 
     const approved = emoji.pending(!(info.approved || info.blessingKind === "merge"));
 
     if (info.hasNewPackages) {
-        display(` * ${approved} Only ${requiredApprover} can approve changes when there are new packages added`);
+        display(` * ${approved} Only ${requiredApprover} can approve changes when new locales are added`);
     } else if (info.editsInfra) {
         const infraFiles = info.pkgInfo.find(p => p.name === null)!.files;
         const links = infraFiles.map(reviewLink);
-        display(` * ${approved} ${RequiredApprover} needs to approve changes which affect DT infrastructure (${links.join(", ")})`);
+        display(` * ${approved} ${RequiredApprover} needs to approve changes which affect Paw Bot infrastructure (${links.join(", ")})`);
     } else if (criticalNum > 1 && info.blessingKind === "review") {
-        display(` * ${approved} ${RequiredApprover} needs to approve changes which affect more than one package`);
+        display(` * ${approved} ${RequiredApprover} needs to approve changes which affect more than one locale`);
         for (const p of info.pkgInfo) {
             if (!(p.name && p.popularityLevel === "Critical")) continue;
             display(`   - ${emoji.pending(info.pendingCriticalPackages.includes(p.name))} ${p.name}`);
         }
     } else if (info.hasMultiplePackages) {
-        display(` * ${approved} ${RequiredApprover} needs to approve changes which affect more than one package`);
+        display(` * ${approved} ${RequiredApprover} needs to approve changes which affect more than one locale`);
     } else if (!info.requireMaintainer || info.blessingKind === "review") {
         display(` * ${approved} Most recent commit is approved by ${requiredApprover}`);
     } else if (info.noOtherOwners) {
@@ -539,7 +521,7 @@ function createWelcomeComment(info: ExtendedPrInfo, post: (c: Comments.Comment) 
     } else if (info.checkConfig) {
         display(` * ${approved} ${RequiredApprover} needs to approve changes which affect module config files`);
     } else {
-        display(` * ${approved} Only ${requiredApprover} can approve changes [without tests](${testsLink})`);
+        display(` * ${approved} Only ${requiredApprover} can approve changes without tests`);
     }
 
     display(``);

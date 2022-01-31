@@ -26,5 +26,5 @@ jobs:
         node .github/workflows/print-tree.js bin
     - uses: Azure/functions-action@v1
       with:
-        app-name: DTMergeBot
+        app-name: LangMergeBot
         publish-profile: ${{ secrets.SCM_CREDENTIALS }}

@@ -9,11 +9,11 @@ export const mergeCodeOwnersOnGreen = async (payload: CheckSuiteEvent) => {
 
     if (payload.action === "completed"
         && payload.check_suite.conclusion === "success"
-        && payload.check_suite.head_commit.author.name === "TS Bot"
-        && payload.check_suite.head_commit.message === "Update CODEOWNERS"
+        && payload.check_suite.head_commit.author.name === "Paw Bot"
+        && payload.check_suite.head_commit.message === "chore: 🤖 update codeowners"
         && payload.check_suite.pull_requests[0]!.base.repo.id === payload.check_suite.pull_requests[0]!.head.repo.id) {
         await client.mutate(createMutation<schema.MergePullRequestInput>("mergePullRequest", {
-            commitHeadline: `🤖 Auto Merge`,
+            commitHeadline: `chore: 🤖 auto merge`,
             expectedHeadOid: payload.check_suite.head_commit.id,
             mergeMethod: "SQUASH",
             pullRequestId: payload.check_suite.pull_requests[0]!.id.toFixed(),

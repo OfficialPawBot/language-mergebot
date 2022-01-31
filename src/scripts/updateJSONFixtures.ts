@@ -28,9 +28,9 @@ fixtureNames.forEach(fixture => {
             "__typename": "App",
         },
         "conclusion": status,
-        "resourcePath": "/DefinitelyTyped/DefinitelyTyped/commit/22c73c88cc9c09efd4c2998ec360607dd4c36c2e/checks?check_suite_id=731664306",
+        "resourcePath": "/OfficialPawBot/language/commit/514e20426039035ea23c35665cf02e5d897df4c1/checks?check_suite_id=4994604855",
         "status": status,
-        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped/commit/22c73c88cc9c09efd4c2998ec360607dd4c36c2e/checks?check_suite_id=731664306",
+        "url": "https://github.com/OfficialPawBot/language/commit/514e20426039035ea23c35665cf02e5d897df4c1/checks?check_suite_id=4994604855",
         "__typename": "CheckSuite",
     });
 

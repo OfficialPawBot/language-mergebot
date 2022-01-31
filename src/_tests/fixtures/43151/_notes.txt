@@ -1,1 +1,0 @@
-This PR is a new package, which required a DT maintainer to validate

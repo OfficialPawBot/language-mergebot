@@ -1,0 +1,22 @@
+{
+  "projectColumn": "Waiting for Author to Merge",
+  "labels": [
+    "Critical locale",
+    "Maintainer Approved",
+    "Edits multiple locales",
+    "Self Merge"
+  ],
+  "responseComments": [
+    {
+      "tag": "welcome",
+      "status": "@lesslih Thank you for submitting this PR!\n\n***This is a live comment which I will keep updated.***\n\n## 3 locales in this PR\n\n* `en`\n  - owner-approval: @MrGriefs\n* `es`\n  - owner-approval: @MrGriefs\n* `fr`\n\n## Code Reviews\n\nBecause this is a widely-used locale, a maintainer will need to review it before it can be merged.\n\n## Status\n\n * ✅ No merge conflicts\n * ✅ Continuous integration tests have passed\n * ✅ A maintainer needs to approve changes which affect more than one locale\n\nAll of the items on the list are green. **To merge, you need to post a comment including the string \"Ready to merge\"** to bring in your changes.\n\n----------------------\n... diagnostics scrubbed ..."
+    },
+    {
+      "tag": "merge-offer",
+      "status": "@lesslih: Everything looks good here. I am ready to merge this PR (at fe205d3) on your behalf whenever you think it's ready.\n\nIf you'd like that to happen, please post a comment saying:\n\n> Ready to merge\n\nand I'll merge this PR almost instantly. Thanks for helping out! :heart:\n"
+    }
+  ],
+  "shouldClose": false,
+  "shouldMerge": false,
+  "shouldUpdateLabels": true
+}

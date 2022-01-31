@@ -1,301 +1,220 @@
 {
   "comment": "Generate & update with `npm run update-test-data`",
-  "getProjectBoardColumns": [
-    {
-      "__typename": "ProjectColumn",
-      "id": "MDEzOlByb2plY3RDb2x1bW43NTUyOTI0",
-      "name": "Needs Author Action"
-    },
-    {
-      "__typename": "ProjectColumn",
-      "id": "MDEzOlByb2plY3RDb2x1bW45ODY3MDA2",
-      "name": "Needs Maintainer Action"
-    },
-    {
-      "__typename": "ProjectColumn",
-      "id": "MDEzOlByb2plY3RDb2x1bW43NTUyOTIy",
-      "name": "Needs Maintainer Review"
-    },
-    {
-      "__typename": "ProjectColumn",
-      "id": "MDEzOlByb2plY3RDb2x1bW43NTUyOTI2",
-      "name": "Other"
-    },
-    {
-      "__typename": "ProjectColumn",
-      "id": "MDEzOlByb2plY3RDb2x1bW43NTUyOTI1",
-      "name": "Recently Merged"
-    },
-    {
-      "__typename": "ProjectColumn",
-      "id": "MDEzOlByb2plY3RDb2x1bW43NTUyOTIz",
-      "name": "Waiting for Author to Merge"
-    },
-    {
-      "__typename": "ProjectColumn",
-      "id": "MDEzOlByb2plY3RDb2x1bW43NTUyOTMw",
-      "name": "Waiting for Code Reviews"
-    }
-  ],
+  "getProjectBoardColumns": [],
   "getLabels": [
     {
-      "id": "MDU6TGFiZWw0MDUzNDEwNjk=",
-      "name": "@types",
-      "__typename": "Label"
-    },
-    {
-      "id": "MDU6TGFiZWw2NDQxMTYxNzA=",
+      "id": "LA_kwDOFPVO2c7hZ8cj",
       "name": "Abandoned",
       "__typename": "Label"
     },
     {
-      "id": "MDU6TGFiZWw3OTg3Mzc0Nzg=",
+      "id": "LA_kwDOFPVO2c7hZ8rF",
       "name": "Author is Owner",
       "__typename": "Label"
     },
     {
-      "id": "MDU6TGFiZWwyMTU0ODE2NTQ5",
+      "id": "LA_kwDOFPVO2c7hooSy",
       "name": "Check Config",
       "__typename": "Label"
     },
     {
-      "id": "MDU6TGFiZWwxNjA4NjM0NDg0",
-      "name": "Critical package",
+      "id": "LA_kwDOFPVO2c7hoqYh",
+      "name": "Critical locale",
       "__typename": "Label"
     },
     {
-      "id": "MDU6TGFiZWwxNTY4Nzg5MA==",
+      "id": "MDU6TGFiZWwyODU2OTA5NTgx",
       "name": "Definition:Bug",
       "__typename": "Label"
     },
     {
-      "id": "MDU6TGFiZWw4ODk3OTYxOA==",
-      "name": "Definition:Creating",
-      "__typename": "Label"
-    },
-    {
-      "id": "MDU6TGFiZWwxNTY4Nzg5Mg==",
+      "id": "MDU6TGFiZWwyODU2OTA5NTky",
       "name": "Definition:Enhancement",
       "__typename": "Label"
     },
     {
-      "id": "MDU6TGFiZWwyOTM4NjAwOA==",
-      "name": "Definition:Missing",
-      "__typename": "Label"
-    },
-    {
-      "id": "MDU6TGFiZWwyMzcwODQxMw==",
-      "name": "Definition:Request",
-      "__typename": "Label"
-    },
-    {
-      "id": "MDU6TGFiZWwyMTg2MTM4MjI0",
+      "id": "LA_kwDOFPVO2c7ho63q",
       "name": "dependencies",
       "__typename": "Label"
     },
     {
-      "id": "MDU6TGFiZWw1NjcxNzAyMQ==",
+      "id": "LA_kwDOFPVO2c7ho7ee",
       "name": "Discussion",
       "__typename": "Label"
     },
     {
-      "id": "MDU6TGFiZWw3NTcxMTk0Ng==",
-      "name": "Documents",
+      "id": "MDU6TGFiZWwyODU2OTA5NTg1",
+      "name": "documentation",
       "__typename": "Label"
     },
     {
-      "id": "MDU6TGFiZWwzMDI2OTUyNQ==",
-      "name": "Duplicate",
+      "id": "MDU6TGFiZWwyODU2OTA5NTg4",
+      "name": "duplicate",
       "__typename": "Label"
     },
     {
-      "id": "MDU6TGFiZWwxNjA4MjA4ODM1",
+      "id": "LA_kwDOFPVO2c7ho8Bc",
       "name": "Edits Infrastructure",
       "__typename": "Label"
     },
     {
-      "id": "MDU6TGFiZWwxNjA4MjEwODMz",
-      "name": "Edits multiple packages",
+      "id": "LA_kwDOFPVO2c7ho8Qb",
+      "name": "Edits multiple locales",
       "__typename": "Label"
     },
     {
-      "id": "MDU6TGFiZWwyNDk1OTc2ODI5",
+      "id": "LA_kwDOFPVO2c7ho8eP",
       "name": "Edits Owners",
       "__typename": "Label"
     },
     {
-      "id": "MDU6TGFiZWw1ODMyOTQ0NzQ=",
+      "id": "LA_kwDOFPVO2c7gulOm",
+      "name": "feature",
+      "__typename": "Label"
+    },
+    {
+      "id": "MDU6TGFiZWwyODU2OTA5NTk0",
+      "name": "good first issue",
+      "__typename": "Label"
+    },
+    {
+      "id": "LA_kwDOFPVO2c7ho8pJ",
       "name": "Has Merge Conflict",
       "__typename": "Label"
     },
     {
-      "id": "MDU6TGFiZWwzMzUzMTYyNTAy",
+      "id": "MDU6TGFiZWwyODU2OTA5NTk3",
+      "name": "help wanted",
+      "__typename": "Label"
+    },
+    {
+      "id": "LA_kwDOFPVO2c7ho944",
       "name": "Huge Change",
       "__typename": "Label"
     },
     {
-      "id": "MDU6TGFiZWwzMDI2OTc0NQ==",
+      "id": "LA_kwDOFPVO2c7cE9vY",
+      "name": "incomplete",
+      "__typename": "Label"
+    },
+    {
+      "id": "LA_kwDOFPVO2c7ho-bb",
       "name": "Infrastructure",
       "__typename": "Label"
     },
     {
-      "id": "MDU6TGFiZWwzMDI2OTUzOA==",
+      "id": "MDU6TGFiZWwyODU2OTA5NjAw",
       "name": "invalid",
       "__typename": "Label"
     },
     {
-      "id": "MDU6TGFiZWw1NjcxNDU5MQ==",
-      "name": "Level:Advanced",
-      "__typename": "Label"
-    },
-    {
-      "id": "MDU6TGFiZWw1NjcxNDU3Mg==",
-      "name": "Level:Intermediate",
-      "__typename": "Label"
-    },
-    {
-      "id": "MDU6TGFiZWw1NjcxNDU3MQ==",
-      "name": "Level:Starter",
-      "__typename": "Label"
-    },
-    {
-      "id": "MDU6TGFiZWwxNjA4NTUyNDEw",
+      "id": "LA_kwDOFPVO2c7ho_9D",
       "name": "Maintainer Approved",
       "__typename": "Label"
     },
     {
-      "id": "MDU6TGFiZWwyMTk3MzU2OTA1",
+      "id": "LA_kwDOFPVO2c7hpAHW",
       "name": "Mergebot Error",
       "__typename": "Label"
     },
     {
-      "id": "MDU6TGFiZWwyNTI5Mjc2Njc2",
-      "name": "Multiple Languages",
-      "__typename": "Label"
-    },
-    {
-      "id": "MDU6TGFiZWw2NDY3ODg4ODg=",
+      "id": "LA_kwDOFPVO2c7hpCC0",
       "name": "New Definition",
       "__typename": "Label"
     },
     {
-      "id": "MDU6TGFiZWwyMTU0ODU3ODAw",
+      "id": "LA_kwDOFPVO2c7hpCQl",
       "name": "No Other Owners",
       "__typename": "Label"
     },
     {
-      "id": "MDU6TGFiZWw1ODYxNzcwNjM=",
+      "id": "LA_kwDOFPVO2c7hpCcT",
       "name": "Other Approved",
       "__typename": "Label"
     },
     {
-      "id": "MDU6TGFiZWw5MDUzMzQwOTU=",
+      "id": "LA_kwDOFPVO2c7hpCqi",
       "name": "Owner Approved",
       "__typename": "Label"
     },
     {
-      "id": "MDU6TGFiZWwxNTk2MTk1ODI0",
-      "name": "Perf: Better",
+      "id": "LA_kwDOFPVO2c7hpEQs",
+      "name": "Popular locale",
       "__typename": "Label"
     },
     {
-      "id": "MDU6TGFiZWwxNTk2MTk4NTgw",
-      "name": "Perf: Mixed",
-      "__typename": "Label"
-    },
-    {
-      "id": "MDU6TGFiZWwxNTk2MTk0NzQ0",
-      "name": "Perf: Same",
-      "__typename": "Label"
-    },
-    {
-      "id": "MDU6TGFiZWwxNTk2MTk5Mjg2",
-      "name": "Perf: Worse",
-      "__typename": "Label"
-    },
-    {
-      "id": "MDU6TGFiZWw2ODQzMjE1NzY=",
-      "name": "Popular package",
-      "__typename": "Label"
-    },
-    {
-      "id": "MDU6TGFiZWwyOTUzOTk4NzE4",
+      "id": "LA_kwDOFPVO2c7hpEf6",
       "name": "Possibly Edits Infrastructure",
       "__typename": "Label"
     },
     {
-      "id": "MDU6TGFiZWwxNTY4Nzg5NA==",
+      "id": "MDU6TGFiZWwyODU2OTA5NjAz",
       "name": "Question",
       "__typename": "Label"
     },
     {
-      "id": "MDU6TGFiZWwzOTU2NzkwNTk=",
+      "id": "LA_kwDOFPVO2c7cpDkD",
+      "name": "refactor",
+      "__typename": "Label"
+    },
+    {
+      "id": "LA_kwDOFPVO2c7hpFBk",
       "name": "Revision needed",
       "__typename": "Label"
     },
     {
-      "id": "MDU6TGFiZWw2OTcwMTg5NzI=",
+      "id": "LA_kwDOFPVO2c7hpFOD",
       "name": "Self Merge",
       "__typename": "Label"
     },
     {
-      "id": "MDU6TGFiZWw1NjcxNDI1Mg==",
-      "name": "Target:Browser",
+      "id": "LA_kwDOFPVO2c7fK7gf",
+      "name": "stale",
       "__typename": "Label"
     },
     {
-      "id": "MDU6TGFiZWw1NjcxNDI0NQ==",
-      "name": "Target:NodeJS",
-      "__typename": "Label"
-    },
-    {
-      "id": "MDU6TGFiZWwyMDk2NzQzNjAw",
+      "id": "LA_kwDOFPVO2c7hpFjf",
       "name": "The CI failed",
       "__typename": "Label"
     },
     {
-      "id": "MDU6TGFiZWwyOTUzOTk2NDAx",
+      "id": "LA_kwDOFPVO2c7hpFuZ",
       "name": "The CI is blocked",
       "__typename": "Label"
     },
     {
-      "id": "MDU6TGFiZWwyMTU2MzIyMzcx",
+      "id": "LA_kwDOFPVO2c7hpFyd",
       "name": "Too Many Owners",
       "__typename": "Label"
     },
     {
-      "id": "MDU6TGFiZWwzMjAzMjg3Mg==",
-      "name": "TypeScript-Core",
+      "id": "LA_kwDOFPVO2c7cE9qe",
+      "name": "translation",
       "__typename": "Label"
     },
     {
-      "id": "MDU6TGFiZWw2NDQwOTUzNDI=",
-      "name": "Unmergeable",
-      "__typename": "Label"
-    },
-    {
-      "id": "MDU6TGFiZWw2NDQwOTU4ODI=",
+      "id": "LA_kwDOFPVO2c7hpHBP",
       "name": "Unmerged",
       "__typename": "Label"
     },
     {
-      "id": "MDU6TGFiZWw2NDY3ODkyMDU=",
+      "id": "LA_kwDOFPVO2c7hpHJw",
       "name": "Unowned",
       "__typename": "Label"
     },
     {
-      "id": "MDU6TGFiZWwyNDYyODA0MzE1",
+      "id": "LA_kwDOFPVO2c7hpHVz",
       "name": "Unreviewed",
       "__typename": "Label"
     },
     {
-      "id": "MDU6TGFiZWwyMTU0NzUwNDcz",
-      "name": "Untested Change",
+      "id": "LA_kwDOFPVO2c7hpJdA",
+      "name": "Where is GH Actions?",
       "__typename": "Label"
     },
     {
-      "id": "MDU6TGFiZWwyMDk2NzQ1NzQx",
-      "name": "Where is GH Actions?",
+      "id": "MDU6TGFiZWwyODU2OTA5NjA3",
+      "name": "wontfix",
       "__typename": "Label"
     }
   ]

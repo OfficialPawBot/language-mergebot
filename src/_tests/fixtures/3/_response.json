@@ -1,0 +1,260 @@
+{
+  "data": {
+    "repository": {
+      "id": "MDEwOlJlcG9zaXRvcnkzNTE2MjA4MjU=",
+      "pullRequest": {
+        "id": "PR_kwDOFPVO2c4wclHW",
+        "title": "Dutch translation [incomplete]",
+        "createdAt": "2022-01-02T21:38:47Z",
+        "author": {
+          "login": "RamonvRooyen",
+          "__typename": "User"
+        },
+        "authorAssociation": "FIRST_TIME_CONTRIBUTOR",
+        "baseRef": {
+          "name": "main",
+          "__typename": "Ref"
+        },
+        "labels": {
+          "nodes": [
+            {
+              "name": "translation",
+              "__typename": "Label"
+            },
+            {
+              "name": "incomplete",
+              "__typename": "Label"
+            },
+            {
+              "name": "stale",
+              "__typename": "Label"
+            }
+          ],
+          "__typename": "LabelConnection"
+        },
+        "isDraft": true,
+        "mergeable": "CONFLICTING",
+        "number": 3,
+        "state": "OPEN",
+        "headRefOid": "fc4021fda3981da6bfd0f7612f3c9afc738fbb67",
+        "changedFiles": 5,
+        "additions": 503,
+        "deletions": 0,
+        "commitIds": {
+          "nodes": [
+            {
+              "commit": {
+                "oid": "1b8da6d35d7a7e99bb8d2c1ac79116be4d1993e4",
+                "parents": {
+                  "nodes": [
+                    {
+                      "oid": "763735201a0fe162f21ea4008a9608d964e08d4e",
+                      "__typename": "Commit"
+                    }
+                  ],
+                  "__typename": "CommitConnection"
+                },
+                "__typename": "Commit"
+              },
+              "__typename": "PullRequestCommit"
+            },
+            {
+              "commit": {
+                "oid": "d1019ddf33d3ade98785912a6d04f5fa8c3a8971",
+                "parents": {
+                  "nodes": [
+                    {
+                      "oid": "1b8da6d35d7a7e99bb8d2c1ac79116be4d1993e4",
+                      "__typename": "Commit"
+                    }
+                  ],
+                  "__typename": "CommitConnection"
+                },
+                "__typename": "Commit"
+              },
+              "__typename": "PullRequestCommit"
+            },
+            {
+              "commit": {
+                "oid": "eae6b2266d8b6e1d2533fee17c21baee0886a264",
+                "parents": {
+                  "nodes": [
+                    {
+                      "oid": "d1019ddf33d3ade98785912a6d04f5fa8c3a8971",
+                      "__typename": "Commit"
+                    },
+                    {
+                      "oid": "cb00422cec184e03542bfb786426ceb940fa723c",
+                      "__typename": "Commit"
+                    }
+                  ],
+                  "__typename": "CommitConnection"
+                },
+                "__typename": "Commit"
+              },
+              "__typename": "PullRequestCommit"
+            },
+            {
+              "commit": {
+                "oid": "fc4021fda3981da6bfd0f7612f3c9afc738fbb67",
+                "parents": {
+                  "nodes": [
+                    {
+                      "oid": "eae6b2266d8b6e1d2533fee17c21baee0886a264",
+                      "__typename": "Commit"
+                    }
+                  ],
+                  "__typename": "CommitConnection"
+                },
+                "__typename": "Commit"
+              },
+              "__typename": "PullRequestCommit"
+            }
+          ],
+          "__typename": "PullRequestCommitConnection"
+        },
+        "timelineItems": {
+          "nodes": [],
+          "__typename": "PullRequestTimelineItemsConnection"
+        },
+        "reviews": {
+          "nodes": [
+            {
+              "author": {
+                "login": "MrGriefs",
+                "__typename": "User"
+              },
+              "commit": {
+                "oid": "d1019ddf33d3ade98785912a6d04f5fa8c3a8971",
+                "__typename": "Commit"
+              },
+              "comments": {
+                "nodes": [],
+                "__typename": "PullRequestReviewCommentConnection"
+              },
+              "authorAssociation": "MEMBER",
+              "state": "APPROVED",
+              "submittedAt": "2022-01-02T21:49:26Z",
+              "url": "https://github.com/OfficialPawBot/language/pull/3#pullrequestreview-842446649",
+              "__typename": "PullRequestReview"
+            }
+          ],
+          "__typename": "PullRequestReviewConnection"
+        },
+        "commits": {
+          "totalCount": 4,
+          "nodes": [
+            {
+              "commit": {
+                "checkSuites": {
+                  "nodes": [
+                    {
+                      "databaseId": 4843514332,
+                      "app": {
+                        "name": "GitHub Actions",
+                        "__typename": "App"
+                      },
+                      "conclusion": "SUCCESS",
+                      "resourcePath": "/OfficialPawBot/language/commit/fc4021fda3981da6bfd0f7612f3c9afc738fbb67/checks?check_suite_id=4843514332",
+                      "status": "COMPLETED",
+                      "url": "https://github.com/OfficialPawBot/language/commit/fc4021fda3981da6bfd0f7612f3c9afc738fbb67/checks?check_suite_id=4843514332",
+                      "checkRuns": {
+                        "nodes": [
+                          {
+                            "title": null,
+                            "__typename": "CheckRun"
+                          }
+                        ],
+                        "__typename": "CheckRunConnection"
+                      },
+                      "__typename": "CheckSuite"
+                    }
+                  ],
+                  "__typename": "CheckSuiteConnection"
+                },
+                "status": null,
+                "authoredDate": "2022-01-05T19:44:37Z",
+                "committedDate": "2022-01-05T19:44:37Z",
+                "pushedDate": "2022-01-05T19:45:13Z",
+                "oid": "fc4021fda3981da6bfd0f7612f3c9afc738fbb67",
+                "__typename": "Commit"
+              },
+              "__typename": "PullRequestCommit"
+            }
+          ],
+          "__typename": "PullRequestCommitConnection"
+        },
+        "comments": {
+          "totalCount": 1,
+          "nodes": [
+            {
+              "id": "IC_kwDOFPVO2c471Hla",
+              "author": {
+                "login": "MrGriefs",
+                "__typename": "User"
+              },
+              "databaseId": 1003780442,
+              "body": "Thank you for your contribution.\r\nOnce you've fully complete the translation, feel free to re-open your pull request.",
+              "createdAt": "2022-01-02T21:47:56Z",
+              "reactions": {
+                "nodes": [],
+                "__typename": "ReactionConnection"
+              },
+              "__typename": "IssueComment"
+            }
+          ],
+          "__typename": "IssueCommentConnection"
+        },
+        "files": {
+          "totalCount": 5,
+          "nodes": [
+            {
+              "path": "locale.json",
+              "additions": 13,
+              "deletions": 0,
+              "__typename": "PullRequestChangedFile"
+            },
+            {
+              "path": "nl/commands.json",
+              "additions": 437,
+              "deletions": 0,
+              "__typename": "PullRequestChangedFile"
+            },
+            {
+              "path": "nl/core.json",
+              "additions": 30,
+              "deletions": 0,
+              "__typename": "PullRequestChangedFile"
+            },
+            {
+              "path": "nl/features.json",
+              "additions": 19,
+              "deletions": 0,
+              "__typename": "PullRequestChangedFile"
+            },
+            {
+              "path": "nl/words.json",
+              "additions": 4,
+              "deletions": 0,
+              "__typename": "PullRequestChangedFile"
+            }
+          ],
+          "pageInfo": {
+            "hasNextPage": false,
+            "endCursor": "NQ",
+            "__typename": "PageInfo"
+          },
+          "__typename": "PullRequestChangedFileConnection"
+        },
+        "projectCards": {
+          "nodes": [],
+          "__typename": "ProjectCardConnection"
+        },
+        "__typename": "PullRequest"
+      },
+      "__typename": "Repository"
+    }
+  },
+  "loading": false,
+  "networkStatus": 7
+}

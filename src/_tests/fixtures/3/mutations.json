@@ -1,0 +1,11 @@
+[
+  {
+    "mutation": "mutation ($input: AddProjectCardInput!) {\n  addProjectCard(input: $input) {\n    __typename\n  }\n}\n",
+    "variables": {
+      "input": {
+        "contentId": "PR_kwDOFPVO2c4wclHW",
+        "projectColumnId": "PC_lATOFPVO2c4A1rV8zgEM5Q0"
+      }
+    }
+  }
+]

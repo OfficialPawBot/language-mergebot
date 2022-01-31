@@ -1,14 +1,10 @@
-import { fetchText } from "./io";
-
-const DAY = 1000 * 60 * 60 * 24;
-const toDateStr = (d: Date, days: number) =>
-    (new Date(d.getTime() - days * DAY)).toISOString().replace(/T.*$/, "");
-
-export async function getMonthlyDownloadCount(packageName: string, until?: Date): Promise<number> {
+export async function getMonthlyDownloadCount(packageName: string): Promise<number> {
     // use the month up to a week before the given date, in case it takes npm some time to update the numbers
-    const range = !until ? "last-month" : `${toDateStr(until, 37)}:${toDateStr(until, 7)}`;
-    const url = `https://api.npmjs.org/downloads/point/${range}/@types/${packageName}`;
-    const result = JSON.parse(await fetchText(url)) as { downloads?: number };
+    // TODO: fetch locale stats from paw bot api, hardcoded for now
     // For a package not on NPM, just return 0.
-    return result.downloads === undefined ?  0 : result.downloads;
+    switch(packageName) {
+        case("en"): return 5_000_001;
+        case("es"): return 200_001;
+        default: return 0;
+    }
 }

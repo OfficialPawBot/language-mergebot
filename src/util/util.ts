@@ -41,9 +41,9 @@ export function sameUser(u1: string, u2: string) {
 }
 
 export function authorNotBot(node: { login: string } | { author?: { login: string } | null} | { actor?: { login: string } | null}): boolean {
-    return ("author" in node && node.author!.login !== "typescript-bot")
-        || ("actor" in node && node.actor!.login !== "typescript-bot")
-        || ("login" in node && node.login !== "typescript-bot");
+    return ("author" in node && node.author!.login !== "just-a-paw-bot")
+        || ("actor" in node && node.actor!.login !== "just-a-paw-bot")
+        || ("login" in node && node.login !== "just-a-paw-bot");
 }
 
 export function scrubDiagnosticDetails(s: string) {

@@ -5,8 +5,8 @@ export async function fetchFile(expr: string, limit?: number): Promise<string | 
     const info = await client.query({
         query: GetFileContent,
         variables: {
-            name: "DefinitelyTyped",
-            owner: "DefinitelyTyped",
+            name: "language",
+            owner: "OfficialPawBot",
             expr: `${expr}`,
         },
     });

@@ -1,5 +1,4 @@
 import { sha256, txt } from "./util/util";
-import * as urls from "./urls";
 
 // use `deletedWhenNotPresent` for comments that should be removed if not in the actions
 export const tagsToDeleteIfNotPosted: string[] = [];
@@ -26,7 +25,7 @@ export const CIFailed = (abbrOid: string, user: string, ciUrl: string) => ({
         |
         |Once you've pushed the fixes, the build will automatically re-run. Thanks!
         |
-        |**Note: builds which are failing do not end up on the list of PRs for the DT
+        |**Note: builds which are failing do not end up on the list of PRs for the
          maintainers to review.**`
 });
 
@@ -43,19 +42,6 @@ export const ChangesRequest = (abbrOid: string, user: string) => ({
         |@${user} One or more reviewers has requested changes. Please address their comments.
          I'll be back once they sign off or you've pushed new commits. Thank you!`
 });
-
-export const SuggestTesting = deletedWhenNotPresent("suggest-testing", tag =>
-    (user: string, testsLink: string) => ({
-        tag, status: txt`
-            |Hey @${user},
-            |
-            |:unamused: Your PR doesn't modify any tests, so it's hard to know what's being fixed,
-             and your changes might regress in the future. Please consider [adding tests](${testsLink})
-             to cover the change you're making. Including tests allows this PR to be merged by
-             yourself and the owners of this module.
-            |
-            |***This can potentially save days of time for you!***`
-    }));
 
 export const PingReviewers = (names: readonly string[], reviewLink: string) => ({
     tag: "pinging-reviewers",
@@ -79,7 +65,7 @@ export const PingReviewersTooMany = (names: readonly string[]) => ({
     tag: "pinging-reviewers-too-many",
     status: txt`
         |⚠️ There are too many reviewers for this PR change (${names.length}).
-         Merging can only be handled by a DT maintainer.
+         Merging can only be handled by a maintainer.
         |
         |<details>
         |<summary>People who would have been pinged</summary>
@@ -109,17 +95,17 @@ export const OfferSelfMerge = deletedWhenNotPresent("merge-offer", tag =>
             |${otherOwners.length === 0 ? "" : `
             |(${otherOwners.map(o => "@" + o).join(", ")}: you can do this too.)`}`}));
 
-export const WaitUntilMergeIsOK = (user: string, abbrOid: string, uri: string, mainCommentID: number | undefined) => ({
+export const WaitUntilMergeIsOK = (user: string, abbrOid: string, mainCommentID: number | undefined) => ({
     // at most one reminder per update
     tag: `wait-for-merge-offer-${abbrOid}`,
     status: txt`
         |:passport_control: Hi @${user},
         |
-        |I can't [accept a pull request](${uri}) until all of the checks in the "Status" section of
+        |I can't accept a pull request until all of the checks in the "Status" section of
          [this comment](#issuecomment-${mainCommentID || "???"}) are green.
          I will let you know once that happens.
         |
-        |Thanks, and happy typing!`
+        |Thanks, and happy translating!`
 });
 
 export const RemindPeopleTheyCanUnblockPR = (user: string, approvalUsers: string[], ciPassing: boolean, abbrOid: string) => ({
@@ -129,14 +115,8 @@ export const RemindPeopleTheyCanUnblockPR = (user: string, approvalUsers: string
         |:hourglass_flowing_sand: Hi @${user},
         |
         |It's been a few days since this PR was approved by ${approvalUsers.join(", ")} and we're waiting for
-         ${ciPassing ? `a DT maintainer to give a review`
-                     : `you to fix the test failures and then for a maintainer approval`}.
-        |
-        |If you would like to short-circuit
-         ${ciPassing ? `this wait`
-                     : `another wait for a maintainer`},
-         you can edit some of the [test files](${urls.testsTs}) in the package which verify how the \`.d.ts\` files
-         work. This would allow the PR to be merged by you or the DT module owners after a re-review.`
+         ${ciPassing ? `a maintainer to give a review`
+                     : `you to fix the test failures and then for a maintainer approval`}.`
 });
 
 // Explanation for the stalness count in the welcome message
@@ -184,7 +164,7 @@ export const StalenessComment = (author: string, ownersToPing: string[], expires
         "Unreviewed:done": txt`
             |It has been more than two weeks and this PR still has no reviews.
             |
-            |I'll bump it to the DT maintainer queue. Thank you for your patience, @${author}.
+            |I'll bump it to the maintainer queue. Thank you for your patience, @${author}.
             |
             |(Ping ${ownerPing}.)`
     } as { [k: string]: string };
