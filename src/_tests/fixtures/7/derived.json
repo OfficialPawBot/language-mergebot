@@ -4,7 +4,7 @@
   "pr_number": 7,
   "author": "lesslih",
   "headCommitOid": "fe205d320ab32c9e4c3d746cb07b615e2d6f3cca",
-  "mergeBaseOid": "main",
+  "mergeBaseOid": "cb00422cec184e03542bfb786426ceb940fa723c",
   "lastPushDate": "2022-01-06T11:54:09.000Z",
   "lastActivityDate": "2022-01-27T16:22:09.000Z",
   "hasMergeConflict": false,
@@ -15,48 +15,42 @@
   "pkgInfo": [
     {
       "name": "en",
-      "kind": "edit",
+      "kind": "add",
       "files": [
         {
           "path": "en/commands.json",
           "kind": "definition"
         }
       ],
-      "owners": [
-        "MrGriefs"
-      ],
+      "owners": [],
       "addedOwners": [],
       "deletedOwners": [],
       "popularityLevel": "Critical"
     },
     {
       "name": "es",
-      "kind": "edit",
+      "kind": "add",
       "files": [
         {
           "path": "es/commands.json",
           "kind": "definition"
         }
       ],
-      "owners": [
-        "MrGriefs"
-      ],
+      "owners": [],
       "addedOwners": [],
       "deletedOwners": [],
       "popularityLevel": "Popular"
     },
     {
       "name": "fr",
-      "kind": "edit",
+      "kind": "add",
       "files": [
         {
           "path": "fr/commands.json",
           "kind": "definition"
         }
       ],
-      "owners": [
-        "FurieFox"
-      ],
+      "owners": [],
       "addedOwners": [],
       "deletedOwners": [],
       "popularityLevel": "Well-liked by everyone"

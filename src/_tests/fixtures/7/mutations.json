@@ -4,7 +4,7 @@
     "variables": {
       "input": {
         "subjectId": "PR_kwDOFPVO2c4wlQf9",
-        "body": "@lesslih Thank you for submitting this PR!\n\n***This is a live comment which I will keep updated.***\n\n## 3 locales in this PR\n\n* `en`\n  - owner-approval: @MrGriefs\n* `es`\n  - owner-approval: @MrGriefs\n* `fr`\n\n## Code Reviews\n\nBecause this is a widely-used locale, a maintainer will need to review it before it can be merged.\n\n## Status\n\n * ✅ No merge conflicts\n * ✅ Continuous integration tests have passed\n * ✅ A maintainer needs to approve changes which affect more than one locale\n\nAll of the items on the list are green. **To merge, you need to post a comment including the string \"Ready to merge\"** to bring in your changes.\n\n----------------------\n... diagnostics scrubbed ...\n<!--paw_bot_welcome-->"
+        "body": "@lesslih Thank you for submitting this PR!\n\n***This is a live comment which I will keep updated.***\n\n## 3 locales in this PR\n\n* `en` (*new!*)\n* `es` (*new!*)\n* `fr` (*new!*)\n\n## Code Reviews\n\nThis PR adds a new locale, so it needs to be reviewed by a maintainer before it can be merged.\n\n## Status\n\n * ✅ No merge conflicts\n * ✅ Continuous integration tests have passed\n * ✅ Only a maintainer can approve changes when new locales are added\n\nAll of the items on the list are green. **To merge, you need to post a comment including the string \"Ready to merge\"** to bring in your changes.\n\n----------------------\n... diagnostics scrubbed ...\n<!--paw_bot_welcome-->"
       }
     }
   },
@@ -13,6 +13,7 @@
     "variables": {
       "input": {
         "labelIds": [
+          "LA_kwDOFPVO2c7hpCC0",
           "LA_kwDOFPVO2c7ho_9D",
           "LA_kwDOFPVO2c7hpFOD",
           "LA_kwDOFPVO2c7hoqYh",
