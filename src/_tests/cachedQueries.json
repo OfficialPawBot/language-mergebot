@@ -1,6 +1,42 @@
 {
   "comment": "Generate & update with `npm run update-test-data`",
-  "getProjectBoardColumns": [],
+  "getProjectBoardColumns": [
+    {
+      "__typename": "ProjectColumn",
+      "id": "PC_lATOFPVO2c4A1rV8zgEM5Q0",
+      "name": "Needs Author Action"
+    },
+    {
+      "__typename": "ProjectColumn",
+      "id": "PC_lATOFPVO2c4A1rV8zgEM5Qc",
+      "name": "Needs Maintainer Action"
+    },
+    {
+      "__typename": "ProjectColumn",
+      "id": "PC_lATOFPVO2c4A1rV8zgEM5Qg",
+      "name": "Needs Maintainer Review"
+    },
+    {
+      "__typename": "ProjectColumn",
+      "id": "PC_lATOFPVO2c4A1rV8zgEM5RM",
+      "name": "Other"
+    },
+    {
+      "__typename": "ProjectColumn",
+      "id": "PC_lATOFPVO2c4A1rV8zgEM5RI",
+      "name": "Recently Merged"
+    },
+    {
+      "__typename": "ProjectColumn",
+      "id": "PC_lATOFPVO2c4A1rV8zgEM5Q4",
+      "name": "Waiting for Author to Merge"
+    },
+    {
+      "__typename": "ProjectColumn",
+      "id": "PC_lATOFPVO2c4A1rV8zgEM5Qk",
+      "name": "Waiting for Code Reviews"
+    }
+  ],
   "getLabels": [
     {
       "id": "LA_kwDOFPVO2c7hZ8cj",
