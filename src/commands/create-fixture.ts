@@ -76,8 +76,8 @@ export default async function main(directory: string, overwriteInfo: boolean) {
         writeJsonSync(downloadsJSONPath, {}); // one-time initialization of an empty storage
         return getDownloadsAndWriteToFile;
     }
-    async function getDownloadsAndWriteToFile(packageName: string, until?: Date) {
-        const downloads = await getMonthlyDownloadCount(packageName, until);
+    async function getDownloadsAndWriteToFile(packageName: string) {
+        const downloads = await getMonthlyDownloadCount(packageName);
         downloadsFetched[packageName] = downloads;
         writeJsonSync(downloadsJSONPath, downloadsFetched);
         return downloads;
