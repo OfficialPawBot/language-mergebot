@@ -38,10 +38,11 @@ export async function shouldRunRequest(context: Context, req: HttpRequest, canHa
 
 
 export async function verifyIsFromGitHub(req: HttpRequest) {
+    if (!req.headers["x-hub-signature-256"] || !req.rawBody) return false;
     const secret = process.env.GITHUB_WEBHOOK_SECRET;
 
     // For process.env.GITHUB_WEBHOOK_SECRET see
     // https://ms.portal.azure.com/#blade/WebsitesExtension/FunctionsIFrameBlade/id/%2Fsubscriptions%2F57bfeeed-c34a-4ffd-a06b-ccff27ac91b8%2FresourceGroups%2Fdtmergebot%2Fproviders%2FMicrosoft.Web%2Fsites%2FDTMergeBot
-    return await verify(secret!, req.rawBody, req.headers["x-hub-signature-256"]!);
+    return await verify(secret!, req.rawBody, req.headers["x-hub-signature-256"]);
 }
 
