@@ -5,7 +5,7 @@ export async function httpLog(context: Context, req: HttpRequest) {
     const { headers, body } = req;
     const githubId = headers["x-github-delivery"];
     const event = headers["x-github-event"]!;
-    const action = body!.action;
+    const action = body?.action;
     context.log(`>>> HTTP Trigger ${context.executionContext.functionName} [${
                   event}.${action
                   }; gh: ${githubId
