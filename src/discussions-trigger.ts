@@ -28,9 +28,9 @@ export const canHandleRequest = (event: string, action: string) => {
 
 const handleTrigger = (info: { event: string; action: string; body: DiscussionWebhook }, context: Context) => {
     const categoryID = info.body.discussion.category.slug;
-    if (categoryID === "issues-with-a-types-package") {
+    if (categoryID === "issues-with-a-locale") {
         return pingAuthorsAndSetUpDiscussion(info.body.discussion);
-    } else if (categoryID === "request-a-new-types-package" && info.action === "created") {
+    } else if (categoryID === "request-a-new-locale" && info.action === "created") {
         return updateDiscordWithRequest(info.body.discussion);
     }
     return reply(context, 204, "Can't handle this specific request");
